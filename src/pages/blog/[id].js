@@ -1,16 +1,19 @@
 import { client } from "../../libs/client";
+import styles from "../../styles/components/Details.module.scss";
 
 const Details = ({ blog }) => {
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
-    </main>
+    <div className={styles.root}>
+      <div className="container">
+        <h1>{blog.title}</h1>
+        <p>{blog.publishedAt}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${blog.body}`,
+          }}
+        />
+      </div>
+    </div>
   );
 }
 

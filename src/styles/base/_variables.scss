@@ -1,0 +1,19 @@
+// breakpoints
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+);
+
+// design size
+$design-size: (
+  "pc-width": 1440,
+  "pc-height": 800,
+  "sp-width": 750,
+  "sp-height": 1334,
+);
+
+// colors
+$color-black: #000000;
+$color-blue: #29e0df;

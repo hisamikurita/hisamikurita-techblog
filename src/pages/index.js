@@ -1,19 +1,21 @@
 import Link from "next/link";
 import { client } from "../libs/client";
-import styles from "../styles/Index.module.scss";
+import styles from "../styles/components/Index.module.scss";
 
 const Index = ({ blog }) => {
   return (
-    <div>
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <span className={styles.text}>{blog.title}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className={styles.root}>
+      <div className="container">
+        <ul>
+          {blog.map((blog) => (
+            <li key={blog.id}>
+              <Link href={`/blog/${blog.id}`}>
+                <span className={styles.text}>{blog.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
