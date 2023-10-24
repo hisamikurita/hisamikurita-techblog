@@ -1,0 +1,43 @@
+name: lolipop
+on: #トリガーを設定
+  #下記ブランチにpushされたら実行
+  push:
+    branches: ["master", "main"]
+
+jobs: #実行するジョブを指定する
+  build: #「build」という名前のジョブを定義
+    name: 🎉 Deploy
+    #Ubuntuの最新版環境内で処理を実行することを指定
+    runs-on: ubuntu-latest
+
+    #実行する処理やコマンドを指定する
+    steps:
+      #公式のアクション「actions/checkout」実行する。リポジトリをクローンしてくる
+      - name: 📦 Get latest code
+        uses: actions/checkout@v3
+
+      #nodeのバージョンを指定
+      - name: 💻 Setup node
+        uses: actions/setup-node@v3 #公式のアクションを使用する
+        with: #引数でバージョン指定
+          node-version: "16"
+
+      #node moduleをインストール
+      - name: 😉 Install modules
+        run: npm install
+        working-directory: ./ #ディレクトリのトップで実行
+
+      # #ビルド
+      - name: 🐶 Build Project
+        run: npm run build
+        working-directory: ./ #ディレクトリのトップで実行
+
+      # #ビルドしたファイルをFTPでアップロード
+      - name: 🏠 Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_SERVER }} #アップロード先のサーバー名
+          username: ${{ secrets.FTP_ACCOUNT }} #アップロード先のサーバーアカウント名
+          password: ${{ secrets.FTP_PASSWORD }} #アップロード先のサーバーパスワード
+          local-dir: next/ #アップロードしたいファイルの階層を指定
+          server-dir: /hsmkrt-tech/ #アップロード先のディレクトリを指定

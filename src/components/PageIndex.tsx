@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Card } from "@/components/Card";
 import { MicroCmsDataType } from "@/libs/types";
 
-export const PageIndex = (data: MicroCmsDataType) => {
-  const articles = data.contents;
+export const PageIndex: React.FC<MicroCmsDataType> = (data) => {
+  const articles = data.contents || [];
 
   return (
     <div className="pt-[60px] pb-[200px]">
