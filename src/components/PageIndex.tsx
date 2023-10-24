@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Card } from "@/components/Card";
 import { MicroCmsDataType } from "@/libs/types";
 
@@ -8,17 +7,12 @@ export const PageIndex: React.FC<MicroCmsDataType> = (data) => {
   return (
     <div className="pt-[60px] pb-[200px]">
       <div className="h-[320px]">
-        <Image
+        <img
           src="/images/thumbnail-mv.jpg"
           alt=""
           width={2688}
           height={1536}
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-            width: "100%",
-            height: "100%",
-          }}
+          className="w-full h-full object-cover"
         />
       </div>
       <div className="custom-container">
