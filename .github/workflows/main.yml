@@ -31,6 +31,9 @@ jobs: #実行するジョブを指定する
       - name: 🐶 Build Project
         run: npm run build
         working-directory: ./ #ディレクトリのトップで実行
+        env: #環境変数を設定
+          API_KEY: ${{ secrets.API_KEY }} #APIのURLを設定
+          SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN }} #サービスドメインを設定
 
       # #ビルドしたファイルをFTPでアップロード
       - name: 🏠 Upload to FTP
