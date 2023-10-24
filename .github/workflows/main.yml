@@ -42,5 +42,5 @@ jobs: #実行するジョブを指定する
           server: ${{ secrets.FTP_SERVER }} #アップロード先のサーバー名
           username: ${{ secrets.FTP_ACCOUNT }} #アップロード先のサーバーアカウント名
           password: ${{ secrets.FTP_PASSWORD }} #アップロード先のサーバーパスワード
-          local-dir: next/ #アップロードしたいファイルの階層を指定
+          local-dir: .next/ #アップロードしたいファイルの階層を指定
           server-dir: /hsmkrt-tech/ #アップロード先のディレクトリを指定
