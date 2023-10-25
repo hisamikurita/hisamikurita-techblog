@@ -13,3 +13,11 @@ export const getBlog = async (queries?: MicroCMSQueries) => {
   });
   return blogData;
 };
+
+export const getAbout = async (queries?: MicroCMSQueries) => {
+  const aboutData = await client.get<Response>({
+    endpoint: "about",
+    queries,
+  });
+  return aboutData;
+};

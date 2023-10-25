@@ -1,7 +1,7 @@
 import { Card } from "@/components/Card";
-import { MicroCmsDataType } from "@/libs/types";
+import { MicroCmsBlogDataType } from "@/libs/types";
 
-export const PageIndex: React.FC<MicroCmsDataType> = (data) => {
+export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
   const articles = data.contents || [];
 
   return (
