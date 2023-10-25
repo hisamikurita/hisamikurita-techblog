@@ -37,7 +37,7 @@ jobs: #実行するジョブを指定する
 
       # #ビルドしたファイルをFTPでアップロード
       - name: 🏠 Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }} #アップロード先のサーバー名
           username: ${{ secrets.FTP_ACCOUNT }} #アップロード先のサーバーアカウント名
