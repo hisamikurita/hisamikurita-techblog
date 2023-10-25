@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ["images.microcms-assets.io"],
   },
   output: "export",
-  trailingSlash: false,
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
