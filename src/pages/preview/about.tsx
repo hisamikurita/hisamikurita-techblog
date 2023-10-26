@@ -1,6 +1,6 @@
 import { LayoutDefault } from "@/components/LayoutDefault";
 import { PageAbout } from "@/components/PageAbout";
-import { getAbout } from "@/libs/microcms-preview";
+import { getDraftKey, getAbout } from "@/libs/microcms-preview";
 import { useEffect, useState } from "react";
 
 const About = () => {
@@ -8,7 +8,8 @@ const About = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await getAbout();
+      const draftKey = getDraftKey(window.location.search);
+      const data = await getAbout({ draftKey });
       setData(data);
     })();
   }, []);
