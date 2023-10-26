@@ -1,5 +1,4 @@
 import { LayoutDefault } from "@/components/LayoutDefault";
-import type { NextPageWithLayout } from "@/pages/_app";
 import { PageAbout } from "@/components/PageAbout";
 import { getAbout } from "@/libs/microcms-preview";
 import { useEffect, useState } from "react";
