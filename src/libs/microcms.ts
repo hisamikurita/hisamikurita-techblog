@@ -1,6 +1,8 @@
 import { createClient } from "microcms-js-sdk";
 import type { MicroCMSQueries } from "microcms-js-sdk";
 
+// SSG/SSRでのみ利用するため、APIキーは隠蔽する
+
 export const client = createClient({
   serviceDomain: process.env.SERVICE_DOMAIN as string,
   apiKey: process.env.API_KEY as string,
