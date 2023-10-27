@@ -8,6 +8,14 @@ export const client = createClient({
   apiKey: process.env.NEXT_PUBLIC_API_KEY as string,
 });
 
+export const getBlog = async (queries?: MicroCMSQueries) => {
+  const blogData = await client.get<Response>({
+    endpoint: "blog",
+    queries,
+  });
+  return blogData;
+};
+
 export const getAbout = async (queries?: MicroCMSQueries) => {
   const aboutData = await client.get<Response>({
     endpoint: "about",
