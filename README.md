@@ -1,6 +1,6 @@
 # hisamikurita-techblog
 
-##　使用技術
+## 使用技術
 
 - Next.js
 - TypeScript
@@ -8,6 +8,6 @@
 - microCMS
 - Github Actions
 
-##　ホスティング
+## ホスティング
 
-レンタルサーバーを使用。SSG で Github Actions でデプロイ。microCMS のプレビュモードは CSR でレンダリング
+レンタルサーバーを使用。SSG でページを静的生成 Github Actions でデプロイ。microCMS のプレビュモードは CSR でレンダリングさせる。
