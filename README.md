@@ -15,3 +15,8 @@
 ## microCMS プレビュー
 
 `pages/preview`配下はプレビュー用ページで、アクセス制限をかける。またこのページはリアルタイムに変更を反映したいため、CSR でレンダリングさせる。
+
+## 画像について
+
+<https://github.com/dc7290/next-export-optimize-images>を使用して SSG でも`next/image`が使用できるようにする。
+microCMS にホスティングされている画像は画像 API 機能を使用して最適化を行う。
