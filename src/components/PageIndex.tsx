@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card } from "@/components/Card";
 import { MicroCmsBlogDataType } from "@/libs/types";
 
@@ -7,7 +8,7 @@ export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
   return (
     <div className="pt-[60px] pb-[200px]">
       <div className="h-[320px]">
-        <img
+        <Image
           src="/images/thumbnail-mv.jpg"
           alt=""
           width={2688}

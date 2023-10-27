@@ -5,7 +5,9 @@ export const BaseHeader = () => {
     <header className="fixed w-full h-[60px] flex items-center bg-white">
       <div className="custom-container">
         <div className="flex justify-between">
-          <p>HSMKRT</p>
+          <p>
+            <Link href="/">HSMKRT</Link>
+          </p>
           <nav>
             <ul className="flex">
               <li className="mr-[24px]">
