@@ -4,6 +4,10 @@ on: #トリガーを設定
   push:
     branches: ["master", "main"]
 
+  #下記のイベントが発生したら実行
+  repository_dispatch:
+    types: [update_post]
+
 jobs: #実行するジョブを指定する
   build: #「build」という名前のジョブを定義
     name: 🎉 Deploy
