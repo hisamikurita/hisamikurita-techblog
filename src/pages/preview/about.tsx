@@ -8,7 +8,9 @@ const About = () => {
 
   useEffect(() => {
     (async () => {
-      const draftKey = getDraftKey(window.location.search);
+      // 下書き用のパラメーターがある場合は取得して、APIリクエストを行う
+      const requestUrl = window.location.href;
+      const draftKey = getDraftKey(requestUrl);
       const data = await getAbout({ draftKey });
       setData(data);
     })();
