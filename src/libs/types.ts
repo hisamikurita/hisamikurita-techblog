@@ -1,3 +1,8 @@
+export type BaseHeadDataType = {
+  title: string;
+  description: string;
+};
+
 export type MicroCmsBlogDataType = {
   contents?: [];
   limit?: number;

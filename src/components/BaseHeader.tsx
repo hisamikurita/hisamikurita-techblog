@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { URL_HOME, URL_ABOUT } from "@/libs/constants";
 
 export const BaseHeader = () => {
   return (
@@ -6,15 +7,15 @@ export const BaseHeader = () => {
       <div className="custom-container">
         <div className="flex justify-between">
           <p>
-            <Link href="/">HSMKRT</Link>
+            <Link href={URL_HOME}>HSMKRT</Link>
           </p>
           <nav>
             <ul className="flex">
               <li className="mr-[24px]">
-                <Link href="/">Blog</Link>
+                <Link href={URL_HOME}>Blog</Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link href={URL_ABOUT}>About</Link>
               </li>
             </ul>
           </nav>
