@@ -40,7 +40,7 @@ jobs: #実行するジョブを指定する
           SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN }} #サービスドメインを設定
           NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }} #プレビュー用のAPIのURLを設定
           NEXT_PUBLIC_SERVICE_DOMAIN: ${{ secrets.NEXT_PUBLIC_SERVICE_DOMAIN }} #プレビュー用のサービスドメインを設定
-          SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }} #サイトURLを設定
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }} #サイトURLを設定
 
       # #ビルドしたファイルをFTPでアップロード
       - name: 🏠 Upload to FTP
