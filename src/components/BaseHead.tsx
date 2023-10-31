@@ -9,7 +9,6 @@ import { BaseHeadDataType } from "@/libs/types";
 export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
   const { title, description } = data;
   const currentUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-  console.log(currentUrl);
 
   return (
     <Head>

@@ -2,11 +2,12 @@ import Image from "next/image";
 import { Card } from "@/components/Card";
 import { MicroCmsBlogDataType } from "@/libs/types";
 import { BaseHead } from "./BaseHead";
+import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 
 export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
   const metaData = {
-    title: "🐶 Hisami Kurita TechBlog",
-    description: "This WebSite is 🐶 Hisami Kurita TechBlog",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   };
   const articles = data.contents || [];
 

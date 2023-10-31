@@ -11,6 +11,16 @@ export type MicroCmsBlogDataType = {
   className?: string;
 };
 
+export type MicroCmsBlogDetailDataType = {
+  id?: string;
+  revisedAt?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  createdAt?: string;
+  title?: string;
+  body?: string;
+};
+
 export type MicroCmsAboutDataType = {
   revisedAt?: string;
   publishedAt?: string;
