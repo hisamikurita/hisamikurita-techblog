@@ -1,9 +1,5 @@
 import Head from "next/head";
-import {
-  URL_FAVICON,
-  URL_APPLE_TOUCH_ICON,
-  URL_DEFAULT_OGP,
-} from "@/libs/constants";
+import { URL_FAVICON, URL_APPLE_TOUCH_ICON, URL_DEFAULT_OGP } from "@/libs/constants";
 import { BaseHeadDataType } from "@/libs/types";
 
 export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
@@ -34,10 +30,7 @@ export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
       <meta property="twitter:url" content={currentUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta
-        property="twitter:image"
-        content={`${currentUrl}${URL_DEFAULT_OGP}`}
-      />
+      <meta property="twitter:image" content={`${currentUrl}${URL_DEFAULT_OGP}`} />
     </Head>
   );
 };

@@ -7,6 +7,9 @@ export const BaseHeader = () => {
       <div className="custom-container">
         <div className="flex justify-between">
           <p>
+            <h1>見出し</h1>
+          </p>
+          <p>
             <Link href={URL_HOME}>HSMKRT</Link>
           </p>
           <nav>

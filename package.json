@@ -6,7 +6,8 @@
     "build": "next build && next-export-optimize-images",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint:html": "markuplint 'src/**/*.{html,jsx,tsx}'",
+    "lint:es": "next lint"
   },
   "dependencies": {
     "microcms-js-sdk": "^2.7.0",
@@ -15,6 +16,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@markuplint/jsx-parser": "^3.11.0",
+    "@markuplint/react-spec": "^3.12.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -22,6 +25,7 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
     "eslint-config-prettier": "^9.0.0",
+    "markuplint": "^3.14.0",
     "next-export-optimize-images": "^3.2.0",
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.31",
