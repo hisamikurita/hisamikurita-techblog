@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         }
       `}</style>
       <Component {...pageProps} />
-    </>
+    </>,
   );
 };
 
