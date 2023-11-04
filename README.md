@@ -22,7 +22,7 @@
 
 - コンポーネントは`/src/components/`直下に全てフラットに置きます。
 - ファイル名はなるべく属性を先頭に持ってきて、一覧で見たときに探しやすい状態を維持するようにしてください。（ex.「BaseHoge」「PageHoge」「CardHoge」「ButtonHoge」など）
-- `pages`ディレクトリはデータの取得のみにして、
+- `pages`ディレクトリはデータの取得のみにして、`/src/components/PageHoge`に受け渡します。
 
 ### 画像について
 
