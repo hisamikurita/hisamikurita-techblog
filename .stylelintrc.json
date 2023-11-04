@@ -12,5 +12,5 @@
     "selector-pseudo-element-no-unknown": null,
     "prettier/prettier": true
   },
-  "ignoreFiles": ["**/node_modules/**", "src/styles/globals.scss"]
+  "ignoreFiles": ["**/node_modules/**"]
 }
