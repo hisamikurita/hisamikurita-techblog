@@ -15,7 +15,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{html,jsx,tsx}": "markuplint",
+    "*.{html,jsx,tsx}": "markuplint --fix",
     "*.{css,scss}": "stylelint --fix",
     "*.{html,css,scss,js,ts,jsx,tsx}": "prettier --write"
   },
