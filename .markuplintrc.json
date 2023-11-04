@@ -5,6 +5,5 @@
   },
   "specs": {
     ".tsx$": "@markuplint/react-spec"
-  },
-  "excludeFiles": ["src/pages/_app.tsx"]
+  }
 }
