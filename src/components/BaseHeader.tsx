@@ -3,7 +3,7 @@ import { URL_HOME, URL_ABOUT } from "@/libs/constants";
 
 export const BaseHeader = () => {
   return (
-    <header className="fixed w-full h-[60px] flex items-center bg-white">
+    <header className="fixed flex h-[60px] w-full items-center bg-white">
       <div className="custom-container">
         <div className="flex justify-between">
           <p>

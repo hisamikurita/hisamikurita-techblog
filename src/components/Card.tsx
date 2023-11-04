@@ -8,8 +8,8 @@ export const Card = ({ article }: any) => {
     <article>
       <Link href={`${URL_BLOG}${id}`}>
         <img src={`${thumbnail.url}?fm=webp&q=80`} alt="" width={thumbnail.width} height={thumbnail.height} decoding="async" />
-        <h1 className="pt-[14px] text-[22px] font-bold tracking-[0.02em] line-clamp-2">{title}</h1>
-        <div className="pt-[10px] text-[16px] line-clamp-3" dangerouslySetInnerHTML={{ __html: body }}></div>
+        <h1 className="line-clamp-2 pt-[14px] text-[22px] font-bold tracking-[0.02em]">{title}</h1>
+        <div className="line-clamp-3 pt-[10px] text-[16px]" dangerouslySetInnerHTML={{ __html: body }}></div>
       </Link>
     </article>
   );

@@ -4,6 +4,6 @@
 
 @layer components {
   .custom-container {
-    @apply w-[1280px] mx-auto;
+    @apply mx-auto w-[1280px];
   }
 }

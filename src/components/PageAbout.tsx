@@ -11,11 +11,11 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
   return (
     <>
       <BaseHead {...metaData} />
-      <div className="pt-[60px] pb-[200px]">
+      <div className="pb-[200px] pt-[60px]">
         <div className="custom-container">
-          <p className="mt-[100px] font-bold text-[24px]">ABOUT</p>
-          <p className="mt-[100px] font-bold text-[24px]">{data.name}</p>
-          <p className="mt-[100px] font-bold text-[24px]">{data.intro}</p>
+          <p className="mt-[100px] text-[24px] font-bold">ABOUT</p>
+          <p className="mt-[100px] text-[24px] font-bold">{data.name}</p>
+          <p className="mt-[100px] text-[24px] font-bold">{data.intro}</p>
         </div>
       </div>
     </>
