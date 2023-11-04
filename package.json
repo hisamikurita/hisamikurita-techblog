@@ -16,7 +16,6 @@
   },
   "lint-staged": {
     "*.{html,jsx,tsx}": "markuplint",
-    "*.{js,ts,jsx,tsx}": "next lint --fix",
     "*.{css,scss}": "stylelint --fix",
     "*.{html,css,scss,js,ts,jsx,tsx}": "prettier --write"
   },
