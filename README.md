@@ -26,7 +26,7 @@
 
 ### 画像について
 
-ローカルの画像は<https://github.com/dc7290/next-export-optimize-images>を使用させていただき SSG でも`next/image`が使用できるようにします。
+ローカルの画像は[next-export-optimize-images](https://github.com/dc7290/next-export-optimize-images)を使用させていただき SSG でも`next/image`が使用できるようにします。
 
 ```bash
 import Image from "next/image";
