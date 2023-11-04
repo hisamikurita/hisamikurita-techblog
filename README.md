@@ -24,6 +24,10 @@
 - ファイル名はなるべく属性を先頭に持ってきて、一覧で見たときに探しやすい状態を維持するようにしてください。（ex.「BaseHoge」「PageHoge」「CardHoge」「ButtonHoge」など）
 - `pages`ディレクトリはデータの取得のみにして、`src/components/PageHoge`に受け渡します。
 
+### スタイリングについて
+
+[Tailwind CSS](https://tailwindcss.com/)を使用してスタイリングを行います。独自のクラスや既存の値を上書きするような設定を行う場合はなるべく避けたいですが、必要な場合はプロジェクトごとに話し合い決定します。
+
 ### 画像について
 
 ローカルの画像は[next-export-optimize-images](https://github.com/dc7290/next-export-optimize-images)を使用させていただき SSG でも`next/image`が使用できるようにします。
