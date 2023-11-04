@@ -11,7 +11,8 @@
     "lint:es": "next lint",
     "lint:check": "npm run lint:html && npm run lint:style && npm run lint:es",
     "lint:fix": "markuplint 'src/**/*.{html,jsx,tsx}' && stylelint --fix 'src/**/*.{css,scss}' && next lint --fix src",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{html,jsx,tsx}": "markuplint",
