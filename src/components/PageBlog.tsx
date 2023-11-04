@@ -2,9 +2,6 @@ import { MicroCmsBlogDetailDataType } from "@/libs/types";
 
 export const PageBlog: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   const { title, body } = data;
-  console.log(title);
-  console.log(title);
-  console.log(title);
 
   return (
     <>

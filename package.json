@@ -17,6 +17,7 @@
   "lint-staged": {
     "*.{html,jsx,tsx}": "markuplint",
     "*.{css,scss}": "stylelint --fix",
+    "*.{js,ts,jsx,tsx}": "next lint --fix src",
     "*.{html,css,scss,js,ts,jsx,tsx}": "prettier --write"
   },
   "dependencies": {
