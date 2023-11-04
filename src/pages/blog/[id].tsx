@@ -1,7 +1,7 @@
 import { defaultClient } from "@/libs/microcms";
 import { LayoutDefault } from "@/components/LayoutDefault";
 import type { NextPageWithLayout } from "@/pages/_app";
-import { PageBlog } from "@/components/PageBlog";
+import { PageBlogDetail } from "@/components/PageBlogDetail";
 
 export const getStaticPaths = async () => {
   const data = await defaultClient.get({ endpoint: "blog" });
@@ -17,7 +17,7 @@ export const getStaticProps = async (context: any) => {
   return { props: data };
 };
 
-const Blog: NextPageWithLayout = (data) => <PageBlog {...data} />;
+const Blog: NextPageWithLayout = (data) => <PageBlogDetail {...data} />;
 
 Blog.getLayout = function getLayout(page: React.ReactElement) {
   return <LayoutDefault>{page}</LayoutDefault>;
