@@ -11,7 +11,7 @@
 
 ## システム構成図
 
-https://github.com/hisamikurita/hisamikurita-techblog/assets/47776346/9a7181af-5ad9-465d-95e5-28cb5fb6e85f
+![システム構成図](https://github.com/hisamikurita/hisamikurita-techblog/assets/47776346/8d9e53a2-f36f-4b71-9a0c-8aeab3c1d70c)
 
 ## Git
 
