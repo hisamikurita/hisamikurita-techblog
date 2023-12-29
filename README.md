@@ -9,6 +9,10 @@
 - [microCMS](https://microcms.io/)
 - [Github Actions](https://github.co.jp/features/actions/)
 
+## システム構成図
+
+https://github.com/hisamikurita/hisamikurita-techblog/assets/47776346/9a7181af-5ad9-465d-95e5-28cb5fb6e85f
+
 ## Git
 
 ### ブランチ運用
