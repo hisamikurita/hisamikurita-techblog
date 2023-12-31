@@ -32,6 +32,7 @@ export type MicroCmsAboutDataType = {
   updatedAt?: string;
   createdAt?: string;
   className?: string;
-  name?: string;
+  nameJa?: string;
+  nameEn?: string;
   intro?: string;
 };

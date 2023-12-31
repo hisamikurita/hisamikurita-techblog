@@ -1,7 +1,6 @@
-import { LayoutDefault } from "@/components/LayoutDefault";
-import type { NextPageWithLayout } from "@/pages/_app";
 import { PageIndex } from "@/components/PageIndex";
-import { getDraftKey, getBlog } from "@/libs/microcms";
+import { getBlog } from "@/libs/microcms";
+import { getDraftKey } from "@/utils/parameters";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -18,10 +17,6 @@ const Index = () => {
   }, []);
 
   return <PageIndex {...data} />;
-};
-
-Index.getLayout = function getLayout(page: React.ReactElement) {
-  return <LayoutDefault>{page}</LayoutDefault>;
 };
 
 export default Index;

@@ -2,7 +2,7 @@
 
 ## 使用技術
 
-- [Next.js](https://nextjs.org/)
+- [Next.js](https://nextjs.org/)(Using Pages Router)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Radix UI](https://www.radix-ui.com/primitives/)
 - [Tailwind CSS](https://tailwindcss.com/)

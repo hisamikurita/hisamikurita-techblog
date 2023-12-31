@@ -1,29 +1,13 @@
 import "@/styles/globals.scss";
-import { NextPage } from "next";
-import { AppProps } from "next/app";
-import { NotoSansJp } from "@/libs/font";
-import { RobotoCondensed } from "@/libs/font";
+import { NotoSansJp, RobotoCondensed } from "@/utils/font";
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: React.ReactElement) => React.ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
-
-const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? ((page) => page);
-  return getLayout(
-    <>
-      <style jsx global>{`
-        :root {
-          --font-noto-sans-jp: ${NotoSansJp.variable};
-          --font-roboto-condensed: ${RobotoCondensed.variable};
-        }
-      `}</style>
-      <Component {...pageProps} />
-    </>,
+const App = ({ Component, pageProps }: any) => {
+  return (
+    <div className={`${NotoSansJp.variable} ${RobotoCondensed.variable}`}>
+      <div className="font-notosansjp">
+        <Component {...pageProps} />
+      </div>
+    </div>
   );
 };
 

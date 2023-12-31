@@ -1,6 +1,6 @@
-import { LayoutDefault } from "@/components/LayoutDefault";
 import { PageAbout } from "@/components/PageAbout";
-import { getDraftKey, getAbout } from "@/libs/microcms";
+import { getAbout } from "@/libs/microcms";
+import { getDraftKey } from "@/utils/parameters";
 import { useEffect, useState } from "react";
 
 const About = () => {
@@ -17,10 +17,6 @@ const About = () => {
   }, []);
 
   return <PageAbout {...data} />;
-};
-
-About.getLayout = function getLayout(page: React.ReactElement) {
-  return <LayoutDefault>{page}</LayoutDefault>;
 };
 
 export default About;
