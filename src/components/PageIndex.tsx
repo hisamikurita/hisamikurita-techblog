@@ -22,11 +22,12 @@ export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
         <div className="custom-container">
           <h1 className="mt-[100px] font-roboto text-[24px] font-bold">BLOG</h1>
           <ul className="mt-[100px] grid grid-cols-3 gap-[42px]">
-            {articles.map((article: any) => (
-              <li key={article.id}>
-                <Card article={article} />
-              </li>
-            ))}
+            {articles &&
+              articles.map((article: any) => (
+                <li key={article.id}>
+                  <Card article={article} />
+                </li>
+              ))}
           </ul>
         </div>
       </div>

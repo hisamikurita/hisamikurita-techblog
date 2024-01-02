@@ -14,7 +14,7 @@ export type ContextDataType = {
 /////////////// Blog ////////////////
 
 export type MicroCmsBlogDataType = {
-  contents: [MicroCmsBlogDetailDataType];
+  contents?: [MicroCmsBlogDetailDataType];
   limit?: number;
   offset?: number;
   totalCount?: number;
@@ -29,7 +29,7 @@ export type MicroCmsBlogDetailDataType = {
   createdAt?: string;
   title?: string;
   body?: string;
-  thumbnail: {
+  thumbnail?: {
     url?: string;
     width?: string;
     height?: string;
