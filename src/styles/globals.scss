@@ -6,4 +6,28 @@
   .custom-container {
     @apply mx-auto w-[1280px];
   }
+
+  .editor {
+    @apply text-[18px] leading-[1.7] tracking-[.05em];
+
+    & h2 {
+      @apply mb-[24px] mt-[52px] text-[20px] font-bold;
+    }
+
+    & ul {
+      @apply grid list-inside list-disc gap-[4px];
+    }
+
+    & a {
+      @apply text-sky-600;
+    }
+
+    & img {
+      @apply w-full;
+    }
+
+    & code {
+      @apply rounded-[5px] bg-gray-100 px-[4px] pb-[2px] font-notosansjp text-gray-800;
+    }
+  }
 }

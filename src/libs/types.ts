@@ -1,10 +1,20 @@
 export type BaseHeadDataType = {
   title: string;
   description: string;
+  thumbnail?: string;
 };
 
+export type ContextDataType = {
+  params: { id: string };
+  locales?: string;
+  locale?: string;
+  defaultLocale?: string;
+};
+
+/////////////// Blog ////////////////
+
 export type MicroCmsBlogDataType = {
-  contents?: [];
+  contents: [MicroCmsBlogDetailDataType];
   limit?: number;
   offset?: number;
   totalCount?: number;
@@ -26,6 +36,8 @@ export type MicroCmsBlogDetailDataType = {
   };
 };
 
+/////////////// About ////////////////
+
 export type MicroCmsAboutDataType = {
   revisedAt?: string;
   publishedAt?: string;
@@ -35,4 +47,13 @@ export type MicroCmsAboutDataType = {
   nameJa?: string;
   nameEn?: string;
   intro?: string;
+  awardHistory?: [CfAwardHistoryDataType];
+};
+
+/////////////// CF ////////////////
+
+export type CfAwardHistoryDataType = {
+  title: string;
+  award: string;
+  link: string;
 };

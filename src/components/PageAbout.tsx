@@ -3,6 +3,7 @@ import { BaseHead } from "./BaseHead";
 import { MicroCmsAboutDataType } from "@/libs/types";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 import { Layout } from "@/components/Layout";
+import { CfAwardHistoryDataType } from "@/libs/types";
 
 export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
   const metaData = {
@@ -10,12 +11,12 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
     description: SITE_DESCRIPTION,
   };
 
-  const { nameJa, nameEn, intro } = data;
+  const { nameJa, nameEn, intro, awardHistory } = data;
 
   return (
     <Layout>
       <BaseHead {...metaData} />
-      <div className="pb-[200px] pt-[60px]">
+      <div className="pb-[120px] pt-[60px]">
         <div className="custom-container">
           <div>
             <h1 className="mt-[100px] font-roboto text-[24px] font-bold">ABOUT</h1>
@@ -30,13 +31,16 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
           </div>
           <div>
             <h2 className="mt-[100px] font-roboto text-[20px] font-bold">AWARD</h2>
-            <ul className="mt-[40px]">
-              <li>
-                <a href="https://hsmkrt1996.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-600">
-                  HISAMI KURITA PORTFOLIO
-                </a>
-                <span className="ml-[22px]">Awwwards SOTD / Nominated for DEVELOPER OF THE YEAR 2022</span>
-              </li>
+            <ul className="mt-[40px] grid gap-[16px]">
+              {awardHistory &&
+                awardHistory.map((content: CfAwardHistoryDataType, index: number) => (
+                  <li key={index}>
+                    <a href={content.link} target="_blank" rel="noopener noreferrer" className="font-bold text-sky-600">
+                      {content.title}
+                    </a>
+                    <span className="ml-[22px]">{content.award}</span>
+                  </li>
+                ))}
             </ul>
           </div>
           <div>

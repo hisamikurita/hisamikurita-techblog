@@ -1,12 +1,13 @@
 import { PageIndex } from "@/components/PageIndex";
-import { getBlog } from "@/libs/microcms";
+import { getBlogList } from "@/libs/microcms";
+import { MicroCmsBlogDataType } from "@/libs/types";
 
 export const getStaticProps = async () => {
-  const data = await getBlog();
+  const data = await getBlogList();
   return { props: data };
 };
 
-const Index = (data: any) => {
+const Index = (data: MicroCmsBlogDataType) => {
   return <PageIndex {...data} />;
 };
 

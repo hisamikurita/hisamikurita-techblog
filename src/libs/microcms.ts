@@ -1,36 +1,40 @@
-import { createClient } from "microcms-js-sdk";
 import type { MicroCMSQueries } from "microcms-js-sdk";
-
-export const defaultClient = createClient({
-  serviceDomain: process.env.SERVICE_DOMAIN as string,
-  apiKey: process.env.API_KEY as string,
-});
-
-export const previewClient = createClient({
-  serviceDomain: process.env.NEXT_PUBLIC_SERVICE_DOMAIN as string,
-  apiKey: process.env.NEXT_PUBLIC_API_KEY as string,
-});
+import { MicroCmsBlogDataType } from "@/libs/types";
+import { MicroCmsBlogDetailDataType } from "@/libs/types";
+import { MicroCmsAboutDataType } from "@/libs/types";
+import { setClient } from "@/libs/client";
 
 /////////////// Blog ////////////////
 
-export const getBlog = async (queries?: MicroCMSQueries, preview = false) => {
-  const client = preview ? previewClient : defaultClient;
+export const getBlogList = async (queries?: MicroCMSQueries, previewMode = false) => {
+  const client = setClient(previewMode);
 
-  const blogData = await client.get<Response>({
+  const data = await client.get<MicroCmsBlogDataType>({
     endpoint: "blog",
     queries,
   });
-  return blogData;
+  return data;
+};
+
+export const getBlogDetail = async (queries?: MicroCMSQueries, previewMode = false, id: string | undefined = undefined) => {
+  const client = setClient(previewMode);
+
+  const data = await client.get<MicroCmsBlogDetailDataType>({
+    endpoint: "blog",
+    queries,
+    contentId: id,
+  });
+  return data;
 };
 
 /////////////// About ////////////////
 
-export const getAbout = async (queries?: MicroCMSQueries, preview = false) => {
-  const client = preview ? previewClient : defaultClient;
+export const getAbout = async (queries?: MicroCMSQueries, previewMode = false) => {
+  const client = setClient(previewMode);
 
-  const aboutData = await client.get<Response>({
+  const data = await client.get<MicroCmsAboutDataType>({
     endpoint: "about",
     queries,
   });
-  return aboutData;
+  return data;
 };

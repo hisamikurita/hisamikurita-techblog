@@ -3,8 +3,9 @@ import { URL_FAVICON, URL_APPLE_TOUCH_ICON, URL_DEFAULT_OGP } from "@/libs/const
 import { BaseHeadDataType } from "@/libs/types";
 
 export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
-  const { title, description } = data;
+  const { title, description, thumbnail } = data;
   const currentUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+  const ogp = thumbnail ? thumbnail : `${currentUrl}${URL_DEFAULT_OGP}`;
 
   return (
     <Head>
@@ -23,14 +24,14 @@ export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${currentUrl}${URL_DEFAULT_OGP}`} />
+      <meta property="og:image" content={ogp} />
 
       {/* Twitter  */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={currentUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={`${currentUrl}${URL_DEFAULT_OGP}`} />
+      <meta property="twitter:image" content={ogp} />
     </Head>
   );
 };

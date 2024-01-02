@@ -1,22 +1,23 @@
-import { defaultClient } from "@/libs/microcms";
+import { getBlogList, getBlogDetail } from "@/libs/microcms";
 import { PageBlogDetail } from "@/components/PageBlogDetail";
+import { ContextDataType, MicroCmsBlogDetailDataType } from "@/libs/types";
 
 export const getStaticPaths = async () => {
-  const data = await defaultClient.get({ endpoint: "blog" });
-  const paths = data.contents.map((content: any) => `/blog/${content.id}`);
+  const data = await getBlogList();
+  const paths = data.contents.map((content: MicroCmsBlogDetailDataType) => `/blog/${content.id}`);
 
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async (context: ContextDataType) => {
   const id = context.params.id;
-  const data = await defaultClient.get({ endpoint: "blog", contentId: id });
+  const data = await getBlogDetail({}, false, id);
 
   return { props: data };
 };
 
-const Blog = (data: any) => {
+const BlogDetail = (data: MicroCmsBlogDetailDataType) => {
   return <PageBlogDetail {...data} />;
 };
 
-export default Blog;
+export default BlogDetail;
