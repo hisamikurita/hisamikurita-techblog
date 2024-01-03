@@ -4,11 +4,11 @@ import { Layout } from "@/components/Layout";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
-  const { title, thumbnail, body } = data;
+  const { title, thumbnail, body, excerpt } = data;
 
   const metaData = {
     title: `${SITE_NAME} | ${title}`,
-    description: SITE_DESCRIPTION,
+    description: excerpt || SITE_DESCRIPTION,
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
 
@@ -22,7 +22,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
         <div className="custom-editor-container">
           <h1 className="mt-[100px] text-[24px] font-bold">{title}</h1>
           <div className="editor">
-            <div className="mt-[100px]" dangerouslySetInnerHTML={{ __html: body || "" }}></div>
+            <div className="mt-[90px]" dangerouslySetInnerHTML={{ __html: body || "" }}></div>
           </div>
         </div>
       </div>

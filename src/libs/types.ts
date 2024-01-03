@@ -29,6 +29,7 @@ export type MicroCmsBlogDetailDataType = {
   createdAt?: string;
   title?: string;
   body?: string;
+  excerpt?: string;
   thumbnail?: {
     url?: string;
     width?: string;
