@@ -17,7 +17,7 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
     <Layout>
       <BaseHead {...metaData} />
       <div className="pb-[120px] pt-[60px]">
-        <div className="custom-container">
+        <div className="custom-main-container">
           <div>
             <h1 className="mt-[100px] font-roboto text-[24px] font-bold">ABOUT</h1>
             <p className="mt-[100px] w-[220px]">
@@ -38,7 +38,7 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
                     <a href={content.link} target="_blank" rel="noopener noreferrer" className="font-bold text-sky-600">
                       {content.title}
                     </a>
-                    <span className="ml-[22px]">{content.award}</span>
+                    <span className="mt-[4px] block md:ml-[22px] md:mt-[0px] md:inline">{content.award}</span>
                   </li>
                 ))}
             </ul>

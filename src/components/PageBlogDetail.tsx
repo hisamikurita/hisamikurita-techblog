@@ -16,10 +16,10 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
     <Layout>
       <BaseHead {...metaData} />
       <div className="pb-[120px] pt-[60px]">
-        <div className="h-[320px]">
+        <div className="h-[200px] md:h-[260px] xl:h-[320px]">
           <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
         </div>
-        <div className="custom-container">
+        <div className="custom-editor-container">
           <h1 className="mt-[100px] text-[24px] font-bold">{title}</h1>
           <div className="editor">
             <div className="mt-[100px]" dangerouslySetInnerHTML={{ __html: body || "" }}></div>
