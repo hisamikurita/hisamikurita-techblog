@@ -15,7 +15,11 @@
     @apply text-[18px] leading-[1.7] tracking-[.05em];
 
     & h2 {
-      @apply mb-[24px] mt-[52px] text-[20px] font-bold;
+      @apply mb-[24px] mt-[52px] text-[22px] font-bold;
+    }
+
+    & h3 {
+      @apply mb-[22px] mt-[44px] text-[20px] font-bold;
     }
 
     & ul {
