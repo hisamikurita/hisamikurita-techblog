@@ -1,10 +1,11 @@
 import { BaseHead } from "./BaseHead";
 import { MicroCmsBlogDetailDataType } from "@/libs/types";
 import { Layout } from "@/components/Layout";
+import { DateFormatter } from "@/components/DateFormatter";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
-  const { title, thumbnail, body, excerpt } = data;
+  const { title, thumbnail, body, excerpt, publishedAt, revisedAt } = data;
 
   const metaData = {
     title: `${SITE_NAME} | ${title}`,
@@ -21,6 +22,9 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
         </div>
         <div className="custom-editor-container">
           <h1 className="mt-[100px] text-[24px] font-bold">{title}</h1>
+          <div>
+            <DateFormatter date={publishedAt} />
+          </div>
           <div className="editor">
             <div className="mt-[90px]" dangerouslySetInnerHTML={{ __html: body || "" }}></div>
           </div>

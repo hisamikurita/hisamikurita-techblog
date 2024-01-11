@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Card } from "@/components/Card";
-import { MicroCmsBlogDataType } from "@/libs/types";
+import { MicroCmsBlogDataType, MicroCmsBlogDetailDataType } from "@/libs/types";
 import { BaseHead } from "./BaseHead";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 import { Layout } from "@/components/Layout";
@@ -23,9 +23,9 @@ export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
           <h1 className="mt-[100px] font-roboto text-[24px] font-bold">BLOG</h1>
           <ul className="mt-[100px] grid gap-[42px] md:grid-cols-2 xl:grid-cols-3">
             {articles &&
-              articles.map((article: any) => (
+              articles.map((article: MicroCmsBlogDetailDataType) => (
                 <li key={article.id}>
-                  <Card article={article} />
+                  <Card {...article} />
                 </li>
               ))}
           </ul>
