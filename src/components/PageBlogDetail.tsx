@@ -3,6 +3,7 @@ import { MicroCmsBlogDetailDataType } from "@/libs/types";
 import { Layout } from "@/components/Layout";
 import { DateFormatter } from "@/components/DateFormatter";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
+import { RichEditor } from "@/components/RichEditor";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   const { title, thumbnail, body, excerpt, publishedAt, revisedAt } = data;
@@ -25,8 +26,8 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
           <div className="mt-[16px]">
             公開日 : <DateFormatter date={publishedAt} />
           </div>
-          <div className="editor">
-            <div className="mt-[90px]" dangerouslySetInnerHTML={{ __html: body || "" }}></div>
+          <div className="mt-[90px]">
+            <RichEditor html={body} />
           </div>
         </div>
       </div>

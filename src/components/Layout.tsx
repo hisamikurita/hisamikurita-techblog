@@ -1,9 +1,9 @@
 import { BaseHeader } from "./BaseHeader";
 import { BaseFooter } from "./BaseFooter";
-import { useHamburgerMenu } from "@/context/hamburgerMenu";
+import { useHamburgerMenuContext } from "@/context/hamburgerMenu";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { isMenuOpen } = useHamburgerMenu();
+  const { isMenuOpen } = useHamburgerMenuContext();
 
   return (
     <>

@@ -2,12 +2,12 @@ import Link from "next/link";
 import { URL_HOME, URL_ABOUT, MENUS } from "@/libs/constants";
 import { useDevice } from "@/hooks/useDevice";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
-import { useHamburgerMenu } from "@/context/hamburgerMenu";
+import { useHamburgerMenuContext } from "@/context/hamburgerMenu";
 import { useEffect } from "react";
 
 export const BaseHeader = () => {
   const { isSp } = useDevice();
-  const { isMenuOpen, toggleMenu } = useHamburgerMenu();
+  const { isMenuOpen, toggleMenu } = useHamburgerMenuContext();
 
   /**
    * メニューが開いているときにメニュー内を tab or shift + tab キーでフォーカスが移動するようにする
@@ -21,11 +21,15 @@ export const BaseHeader = () => {
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Tab" && e.shiftKey === false && menusSp[menusSp.length - 1] === document.activeElement && isMenuOpen) {
-        e.preventDefault(); // デフォルトの処理をキャンセル
-        button.focus(); // メニューのボタンにフォーカスを移す
+        // メニューの最後のリンクにフォーカスがあるときに tab キーを押したら
+        // メニューのボタンにフォーカスを移す
+        e.preventDefault();
+        button.focus();
       } else if (e.key === "Tab" && e.shiftKey && button === document.activeElement && isMenuOpen) {
-        e.preventDefault(); // デフォルトの処理をキャンセル
-        menusSp[menusSp.length - 1].focus(); // メニューの最後のリンクにフォーカスを移す
+        // メニューのボタンにフォーカスがあるときに shift + tab キーを押したら
+        // メニューの最後のリンクにフォーカスを移す
+        e.preventDefault();
+        menusSp[menusSp.length - 1].focus();
       }
     };
 

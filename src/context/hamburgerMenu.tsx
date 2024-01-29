@@ -17,6 +17,6 @@ export const HamburgerMenuProvider = ({ children }: { children: React.ReactNode 
   return <HamburgerMenuContext.Provider value={{ isMenuOpen, toggleMenu, closeMenu }}>{children}</HamburgerMenuContext.Provider>;
 };
 
-export const useHamburgerMenu = () => {
+export const useHamburgerMenuContext = () => {
   return useContext(HamburgerMenuContext);
 };

@@ -37,5 +37,13 @@
     & code {
       @apply rounded-[5px] bg-gray-100 px-[4px] pb-[2px] font-notosansjp text-gray-800;
     }
+
+    & a[target="_blank"] {
+      @apply ml-[2px];
+
+      & svg {
+        @apply mb-[2px] ml-[2px] mr-[4px] inline-flex h-[18px] w-[18px];
+      }
+    }
   }
 }
