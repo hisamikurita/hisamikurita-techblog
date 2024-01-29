@@ -22,8 +22,8 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
         </div>
         <div className="custom-editor-container">
           <h1 className="mt-[100px] text-[24px] font-bold">{title}</h1>
-          <div>
-            <DateFormatter date={publishedAt} />
+          <div className="mt-[16px]">
+            公開日 : <DateFormatter date={publishedAt} />
           </div>
           <div className="editor">
             <div className="mt-[90px]" dangerouslySetInnerHTML={{ __html: body || "" }}></div>

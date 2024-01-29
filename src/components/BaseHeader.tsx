@@ -1,24 +1,82 @@
 import Link from "next/link";
-import { URL_HOME, URL_ABOUT } from "@/libs/constants";
+import { URL_HOME, URL_ABOUT, MENUS } from "@/libs/constants";
+import { useDevice } from "@/hooks/useDevice";
+import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { useHamburgerMenu } from "@/context/hamburgerMenu";
+import { useEffect } from "react";
 
 export const BaseHeader = () => {
+  const { isSp } = useDevice();
+  const { isMenuOpen, toggleMenu } = useHamburgerMenu();
+
+  /**
+   * メニューが開いているときにメニュー内を tab or shift + tab キーでフォーカスが移動するようにする
+   * => フォーカストラップ対応
+   */
+  useEffect(() => {
+    const button: HTMLButtonElement = document.querySelector("[data-menu='hamburger']")!;
+    const menusSp: NodeListOf<HTMLAnchorElement> = document.querySelectorAll("[data-menu='sp']");
+
+    if (isMenuOpen) menusSp[0].focus(); // メニューが開いたときに最初のリンクにフォーカスを移す
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Tab" && e.shiftKey === false && menusSp[menusSp.length - 1] === document.activeElement && isMenuOpen) {
+        e.preventDefault(); // デフォルトの処理をキャンセル
+        button.focus(); // メニューのボタンにフォーカスを移す
+      } else if (e.key === "Tab" && e.shiftKey && button === document.activeElement && isMenuOpen) {
+        e.preventDefault(); // デフォルトの処理をキャンセル
+        menusSp[menusSp.length - 1].focus(); // メニューの最後のリンクにフォーカスを移す
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header className="fixed flex h-[60px] w-full items-center bg-white">
+    <header className="fixed z-10 flex h-[60px] w-full items-center bg-white">
       <div className="custom-main-container">
-        <div className="flex justify-between">
-          <p>
+        <div className="flex items-center justify-between">
+          <p {...(isMenuOpen ? { inert: "" } : "")}>
             <Link href={URL_HOME}>HSMKRT</Link>
           </p>
-          <nav>
-            <ul className="flex">
-              <li className="mr-[24px]">
-                <Link href={URL_HOME}>Blog</Link>
-              </li>
-              <li>
-                <Link href={URL_ABOUT}>About</Link>
-              </li>
-            </ul>
-          </nav>
+          {!isSp && (
+            <nav>
+              <ul className="flex">
+                {MENUS.map((menu, index) => (
+                  <li key={index} className="first:mr-[24px]">
+                    <Link href={menu.url}>{menu.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+          {isSp && (
+            <>
+              <button className="h-[20px] w-[20px]" aria-label={!isMenuOpen ? "メニューを開く" : "メニューを閉じる"} aria-expanded={isMenuOpen ? true : false} onClick={toggleMenu} data-menu="hamburger">
+                <HamburgerMenuIcon width={20} height={20} {...(isMenuOpen && { hidden: true })} />
+                <Cross1Icon width={20} height={20} {...(!isMenuOpen && { hidden: true })} />
+              </button>
+              <div className="absolute left-[0px] top-[60px] w-full" aria-hidden={!isMenuOpen ? true : false} {...(!isMenuOpen && { hidden: true })}>
+                <div className="bg-white">
+                  <nav>
+                    <ul className="grid gap-[10px]">
+                      {MENUS.map((menu, index) => (
+                        <li key={index}>
+                          <Link data-menu="sp" href={menu.url}>
+                            {menu.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </header>
