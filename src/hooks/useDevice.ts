@@ -1,10 +1,12 @@
 import { useState, useLayoutEffect } from "react";
 import { MQ_MAX } from "@/libs/constants";
+import { useIsomorphicEffect } from "@/hooks/useIsomorphicEffect";
 
 export const useDevice = () => {
   const [isSp, setIsSp] = useState(false);
+  const isomorphicEffect = useIsomorphicEffect();
 
-  useLayoutEffect(() => {
+  isomorphicEffect(() => {
     const updateIsSp = (e: any) => {
       setIsSp(e.matches);
     };
