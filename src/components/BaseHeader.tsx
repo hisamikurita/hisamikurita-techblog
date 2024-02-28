@@ -45,7 +45,7 @@ export const BaseHeader = () => {
       <div className="custom-main-container">
         <div className="flex items-center justify-between">
           <p {...(isMenuOpen ? { inert: "" } : "")}>
-            <Link href={URL_HOME}>HSMKRT</Link>
+            <Link href={URL_HOME}>HSMKRT TECH</Link>
           </p>
           {!isSp && (
             <nav>

@@ -4,15 +4,18 @@ import { Layout } from "@/components/Layout";
 import { DateFormatter } from "@/components/DateFormatter";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 import { RichEditor } from "@/components/RichEditor";
+import { parseToc } from "@/utils/parseToc";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
-  const { title, thumbnail, body, excerpt, publishedAt, revisedAt } = data;
+  const { title, thumbnail, body, excerpt, publishedAt, updatedAt } = data;
 
   const metaData = {
     title: `${SITE_NAME} | ${title}`,
     description: excerpt || SITE_DESCRIPTION,
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
+
+  const tocData = parseToc({ body });
 
   return (
     <Layout>
@@ -23,11 +26,30 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
         </div>
         <div className="custom-editor-container">
           <h1 className="mt-[100px] text-[24px] font-bold">{title}</h1>
-          <div className="mt-[16px]">
-            公開日 : <DateFormatter date={publishedAt} />
+          <div className="mt-[16px] grid gap-[8px] md:flex md:gap-[30px]">
+            <div>
+              公開日 : <DateFormatter date={publishedAt} />
+            </div>
+            <div>
+              更新日 : <DateFormatter date={updatedAt} />
+            </div>
           </div>
-          <div className="mt-[90px]">
-            <RichEditor html={body} />
+          <div className="mt-[82px] bg-[#f5f5f5] p-[20px]">
+            <h2 className="text-[18px] font-bold">目次</h2>
+            <ul className="mt-[16px] grid gap-[6px]">
+              {tocData &&
+                tocData.map((data) => (
+                  <li key={data.id} className="text-[14px] opacity-[0.8]">
+                    <a href={`#${data.id}`}>
+                      <span></span>
+                      {data.title}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div className="mt-[76px]">
+            <RichEditor body={body} />
           </div>
         </div>
       </div>

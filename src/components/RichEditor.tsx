@@ -1,11 +1,11 @@
 import { parseRichEditor } from "@/utils/parseRichEditor";
 
 type Props = {
-  html?: string;
+  body?: string;
 };
 
-export const RichEditor = ({ html }: Props) => {
-  const parsedHtml = parseRichEditor({ html });
+export const RichEditor = ({ body }: Props) => {
+  const parsedHtml = parseRichEditor({ body });
 
   return <div className="editor" dangerouslySetInnerHTML={{ __html: parsedHtml || "" }}></div>;
 };

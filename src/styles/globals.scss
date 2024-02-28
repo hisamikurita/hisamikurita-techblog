@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px; // ヘッダーの高さ
+  }
+
   .custom-main-container {
     @apply mx-auto w-full max-w-[1280px] px-[30px] md:px-[40px];
   }
