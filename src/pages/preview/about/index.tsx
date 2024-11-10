@@ -1,4 +1,4 @@
-import { PageAbout } from "@/components/PageAbout";
+import { PageAbout } from "@/features/about";
 import { getAbout } from "@/libs/microcms";
 import { getDraftKey } from "@/utils/parameters";
 import { useEffect, useState } from "react";

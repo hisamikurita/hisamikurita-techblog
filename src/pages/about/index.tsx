@@ -1,4 +1,4 @@
-import { PageAbout } from "@/components/PageAbout";
+import { PageAbout } from "@/features/about";
 import { getAbout } from "@/libs/microcms";
 import { MicroCmsAboutDataType } from "@/libs/types";
 

@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { BaseHead } from "./BaseHead";
+import { BaseHead } from "../../components/BaseHead";
 import { MicroCmsAboutDataType } from "@/libs/types";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
 import { Layout } from "@/components/Layout";
 import { CfAwardHistoryDataType } from "@/libs/types";
-
+import { CanvasMatter } from "./components/CanvasMatter";
 export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
   const metaData = {
     title: `${SITE_NAME} | About`,
@@ -16,7 +16,8 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
   return (
     <Layout>
       <BaseHead {...metaData} />
-      <div className="pb-[120px] pt-[60px]">
+      <CanvasMatter />
+      <div className="relative z-10 pb-[620px] pt-[60px]">
         <div className="custom-main-container">
           <div>
             <h1 className="mt-[100px] font-roboto text-[24px] font-bold">ABOUT</h1>
