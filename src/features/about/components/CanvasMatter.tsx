@@ -127,7 +127,7 @@ export const CanvasMatter = () => {
     <>
       <div className="t-0 l-0 fixed">
         {emojiEls.map((emojiEl, index) => (
-          <span ref={(el) => (emojiRefs.current[index] = el)} key={index} style={{}} className="absolute flex items-center text-7xl leading-none opacity-0 md:text-8xl">
+          <span ref={(el) => (emojiRefs.current[index] = el)} key={index} style={{}} className="absolute flex items-center text-6xl leading-none opacity-0 md:text-8xl">
             {emojiEl}
           </span>
         ))}
