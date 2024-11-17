@@ -131,7 +131,7 @@ export const CanvasMatter = () => {
       scrollVelocity = currentScrollY - lastScrollY;
       lastScrollY = currentScrollY;
 
-      const bounceForce = Math.abs(scrollVelocity) * (isSp ? 0.0001 : 0.0075);
+      const bounceForce = Math.abs(scrollVelocity) * (isSp ? 0.002 : 0.0075);
       const forceDirection = scrollVelocity > 0 ? -1 : 1;
 
       emojisRef.current.forEach((emoji) => {
