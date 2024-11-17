@@ -35,7 +35,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       closeMenu();
       enableBodyScroll(document.body);
     }
-  }, [isSp]);
+  }, [isSp, closeMenu]);
 
   return (
     <>
