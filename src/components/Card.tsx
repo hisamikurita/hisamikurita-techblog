@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { MicroCmsBlogDetailDataType } from "@/libs/types";
-import { URL_BLOG } from "@/libs/constants";
+import { MicroCmsBlogDetailDataType } from "@/types";
+import { URL_BLOG } from "@/constants";
 
 export const Card = (article: MicroCmsBlogDetailDataType) => {
   const { id, thumbnail, title, excerpt } = article;

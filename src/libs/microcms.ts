@@ -1,8 +1,23 @@
 import type { MicroCMSQueries } from "microcms-js-sdk";
-import { MicroCmsBlogDataType } from "@/libs/types";
-import { MicroCmsBlogDetailDataType } from "@/libs/types";
-import { MicroCmsAboutDataType } from "@/libs/types";
-import { setClient } from "@/libs/client";
+import { MicroCmsBlogDataType } from "@/types";
+import { MicroCmsBlogDetailDataType } from "@/types";
+import { MicroCmsAboutDataType } from "@/types";
+import { createClient } from "microcms-js-sdk";
+
+// プレビューの場合はCSRのため、APIキーを公開する
+export const setClient = (preview: boolean) => {
+  if (preview) {
+    return createClient({
+      serviceDomain: process.env.NEXT_PUBLIC_SERVICE_DOMAIN as string,
+      apiKey: process.env.NEXT_PUBLIC_API_KEY as string,
+    });
+  } else {
+    return createClient({
+      serviceDomain: process.env.SERVICE_DOMAIN as string,
+      apiKey: process.env.API_KEY as string,
+    });
+  }
+};
 
 /////////////// Blog ////////////////
 

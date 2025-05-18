@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { BaseHead } from "../../components/BaseHead";
-import { MicroCmsAboutDataType } from "@/libs/types";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
+import { MicroCmsAboutDataType } from "@/types";
+import { SITE_DESCRIPTION, SITE_NAME } from "@/constants";
 import { Layout } from "@/components/Layout";
-import { CfAwardHistoryDataType } from "@/libs/types";
+import { CfAwardHistoryDataType } from "@/types";
 import { CanvasMatter } from "./components/CanvasMatter";
 export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
   const metaData = {

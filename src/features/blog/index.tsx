@@ -1,8 +1,8 @@
-import { BaseHead } from "./BaseHead";
-import { MicroCmsBlogDetailDataType } from "@/libs/types";
+import { BaseHead } from "@/components/BaseHead";
+import { MicroCmsBlogDetailDataType } from "@/types";
 import { Layout } from "@/components/Layout";
 import { DateFormatter } from "@/components/DateFormatter";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
+import { SITE_DESCRIPTION, SITE_NAME } from "@/constants";
 import { RichEditor } from "@/components/RichEditor";
 import { parseToc } from "@/utils/parseToc";
 

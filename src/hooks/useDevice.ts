@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from "react";
-import { MQ_MAX } from "@/libs/constants";
+import { MQ_MAX } from "@/constants";
 import { useIsomorphicEffect } from "@/hooks/useIsomorphicEffect";
 
 export const useDevice = () => {

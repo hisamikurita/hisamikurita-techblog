@@ -1,4 +1,4 @@
-import { PageBlogDetail } from "@/components/PageBlogDetail";
+import { PageBlogDetail } from "@/features/blog/";
 import { getBlogDetail } from "@/libs/microcms";
 import { getContentId, getDraftKey } from "@/utils/parameters";
 import { useEffect, useState } from "react";

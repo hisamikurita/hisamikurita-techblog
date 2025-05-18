@@ -1,4 +1,4 @@
-import { PageIndex } from "@/components/PageIndex";
+import { PageIndex } from "@/features/index";
 import { getBlogList } from "@/libs/microcms";
 import { getDraftKey } from "@/utils/parameters";
 import { useEffect, useState } from "react";

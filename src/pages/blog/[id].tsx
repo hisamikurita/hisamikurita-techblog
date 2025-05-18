@@ -1,6 +1,6 @@
 import { getBlogList, getBlogDetail } from "@/libs/microcms";
-import { PageBlogDetail } from "@/components/PageBlogDetail";
-import { ContextDataType, MicroCmsBlogDetailDataType } from "@/libs/types";
+import { PageBlogDetail } from "@/features/blog/";
+import { ContextDataType, MicroCmsBlogDetailDataType } from "@/types";
 
 export const getStaticPaths = async () => {
   const data = await getBlogList();

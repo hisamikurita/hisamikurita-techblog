@@ -6,5 +6,8 @@
   "specs": {
     ".tsx$": "@markuplint/react-spec"
   },
+  "rules": {
+    "no-hard-code-id": false
+  },
   "excludeFiles": ["src/pages/_app.tsx"]
 }

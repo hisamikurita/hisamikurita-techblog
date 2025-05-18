@@ -1,4 +1,4 @@
-import { SITE_NAME } from "@/libs/constants";
+import { SITE_NAME } from "@/constants";
 
 export const BaseFooter = () => {
   return (

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { URL_FAVICON, URL_APPLE_TOUCH_ICON, URL_DEFAULT_OGP } from "@/libs/constants";
-import { BaseHeadDataType } from "@/libs/types";
+import { URL_FAVICON, URL_APPLE_TOUCH_ICON, URL_DEFAULT_OGP } from "@/constants";
+import { BaseHeadDataType } from "@/types";
 
 export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
   const { title, description, thumbnail } = data;

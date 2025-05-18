@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Card } from "@/components/Card";
-import { MicroCmsBlogDataType, MicroCmsBlogDetailDataType } from "@/libs/types";
-import { BaseHead } from "./BaseHead";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/libs/constants";
+import { MicroCmsBlogDataType, MicroCmsBlogDetailDataType } from "@/types";
+import { BaseHead } from "@/components/BaseHead";
+import { SITE_DESCRIPTION, SITE_NAME } from "@/constants";
 import { Layout } from "@/components/Layout";
 
 export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
