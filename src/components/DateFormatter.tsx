@@ -1,5 +1,4 @@
-import { format } from "date-fns";
-import { ja } from "date-fns/locale";
+import { formatDate, formatYmd } from "@/utils/date";
 
 type Props = {
   date?: string;
@@ -8,8 +7,8 @@ type Props = {
 export const DateFormatter = ({ date }: Props) => {
   if (!date) return "日付がありません";
 
-  const formattedDate = format(new Date(date), "yyyy年MM月dd日", { locale: ja });
-  const ymdDate = format(new Date(date), "yyyy-MM-dd");
+  const formattedDate = formatDate(date);
+  const ymdDate = formatYmd(date);
 
   return (
     <time dateTime={ymdDate} className="text-std-17N-7 text-body shrink-0">
