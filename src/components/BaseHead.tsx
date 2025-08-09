@@ -12,26 +12,16 @@ export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <link rel="icon" href={URL_FAVICON} />
       <link rel="apple-touch-icon" href={URL_APPLE_TOUCH_ICON} />
-
-      {/* Primary Meta Tags */}
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
-
-      {/* OGP / Facebook */}
       <meta property="og:site_name" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogp} />
-
-      {/* Twitter  */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={currentUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={ogp} />
     </Head>
   );
 };
