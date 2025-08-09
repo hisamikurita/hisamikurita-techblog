@@ -1,18 +1,20 @@
+import { cn } from "@/libs/tailwindMerge";
 import { formatDate, formatYmd } from "@/utils/date";
 
 type Props = {
   date?: string;
+  className?: string;
 };
 
-export const DateFormatter = ({ date }: Props) => {
+export const DateFormatter = ({ date, className }: Props) => {
   if (!date) return "日付がありません";
 
   const formattedDate = formatDate(date);
   const ymdDate = formatYmd(date);
 
   return (
-    <time dateTime={ymdDate} className="text-std-17N-7 text-body shrink-0">
-      {formattedDate} 🗓️
+    <time dateTime={ymdDate} className={cn("text-xs text-gray-400", className)}>
+      {formattedDate}
     </time>
   );
 };

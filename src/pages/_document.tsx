@@ -6,11 +6,7 @@ export const Document = () => {
   return (
     <Html lang="ja">
       <Head />
-      <body>
-        {/*
-          ブロックスキップ機能
-          スクリーンリーダーユーザーをメインコンテンツへ飛ばす
-        */}
+      <body id={id}>
         <a className="sr-only" href={`#${id}`}>
           本文へ移動
         </a>

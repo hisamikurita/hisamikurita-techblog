@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { URL_HOME, MENUS } from "@/constants";
+import { URL_HOME, MENUS, SITE_NAME } from "@/constants";
 import { useDevice } from "@/hooks/useDevice";
 import { HamburgerMenuIcon, Cross1Icon, ArrowRightIcon } from "@radix-ui/react-icons";
 import { useHamburgerMenu } from "@/hooks/useHamburgerMenu";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
+import Image from "next/image";
 
 export const BaseHeader = () => {
   const { isSp } = useDevice();
@@ -12,10 +13,13 @@ export const BaseHeader = () => {
 
   return (
     <header className={`fixed z-10 flex h-[60px] w-full items-center bg-white ${isMenuOpen ? "border-b-[1px]" : ""}`}>
-      <div className="custom-main-container">
+      <div className="c-main-container">
         <div className="flex items-center justify-between">
           <p {...(isMenuOpen ? { inert: "" } : "")}>
-            <Link href={URL_HOME}>HSMKRT TECH</Link>
+            <Link href={URL_HOME} className="flex items-center gap-3 font-roboto text-xl font-semibold tracking-wide">
+              <Image src="/images/logo.png" alt="" width={120} height={120} aria-hidden className="w-[32px]" />
+              {SITE_NAME}
+            </Link>
           </p>
           {!isSp && (
             <nav>

@@ -8,7 +8,11 @@
     scroll-padding-top: 60px; // ヘッダーの高さ
   }
 
-  .custom-main-container {
+  body {
+    @apply tracking-[.12em];
+  }
+
+  .c-main-container {
     @apply mx-auto w-full max-w-[1180px] px-[30px] md:px-[40px];
   }
 
@@ -40,7 +44,7 @@
     }
 
     & code {
-      @apply rounded-[5px] bg-gray-100 px-[4px] pb-[2px] font-notosansjp text-gray-800;
+      @apply rounded-[5px] px-[4px] pb-[2px] font-notosansjp;
     }
 
     & a[target="_blank"] {

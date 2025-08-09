@@ -58,3 +58,39 @@ export type CfAwardHistoryDataType = {
   award: string;
   link: string;
 };
+
+/////////////// ZENN ////////////////
+
+export type ZennBlogDataType = {
+  articles?: {
+    id: number;
+    title: string;
+    slug: string;
+    published_at: string;
+    emoji: string;
+    path: string;
+    user: {
+      username: string;
+      name: string;
+    };
+  }[];
+};
+
+export type Article = {
+  source?: "microcms" | "zenn";
+  id?: number | string;
+  revisedAt?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  createdAt?: string;
+  title?: string;
+  body?: string;
+  excerpt?: string;
+  emoji?: string;
+  slug?: string;
+  thumbnail?: {
+    url?: string;
+    width?: string;
+    height?: string;
+  };
+};

@@ -18,7 +18,7 @@ export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
       <BaseHead {...metaData} />
       <CanvasMatter />
       <div className="relative z-10 pb-[620px] pt-[60px]">
-        <div className="custom-main-container">
+        <div className="c-main-container">
           <div>
             <h1 className="mt-[100px] font-roboto text-[24px] font-bold">ABOUT</h1>
             <p className="mt-[100px] w-[220px]">

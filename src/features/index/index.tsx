@@ -1,29 +1,29 @@
-import Image from "next/image";
 import { Card } from "@/components/Card";
-import { MicroCmsBlogDataType, MicroCmsBlogDetailDataType } from "@/types";
 import { BaseHead } from "@/components/BaseHead";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/constants";
+import { META_TITLE, META_DESCRIPTION } from "@/constants";
 import { Layout } from "@/components/Layout";
+import { Article } from "@/types";
+import LottieReact from "lottie-react";
+import Wave from "../../../public/lottie/wave.json";
 
-export const PageIndex: React.FC<MicroCmsBlogDataType> = (data) => {
+export const PageIndex = ({ data }: { data: Article[] }) => {
   const metaData = {
-    title: SITE_NAME,
-    description: SITE_DESCRIPTION,
+    title: META_TITLE,
+    description: META_DESCRIPTION,
   };
-  const articles = data.contents;
 
   return (
     <Layout>
       <BaseHead {...metaData} />
-      <div className="pb-[120px] pt-[60px]">
-        <div className="h-[200px] md:h-[260px] xl:h-[320px]">
-          <Image src="/images/thumbnail-mv.jpg" alt="" width={2688} height={1536} className="h-full w-full object-cover" />
-        </div>
-        <div className="custom-main-container">
-          <h1 className="mt-[100px] font-roboto text-[24px] font-bold">BLOG</h1>
-          <ul className="mt-[100px] grid gap-[42px] md:grid-cols-2 xl:grid-cols-3">
-            {articles &&
-              articles.map((article: MicroCmsBlogDetailDataType) => (
+      <div className="pb-10 pt-[60px]">
+        <div className="c-main-container">
+          <div className="mt-8 flex items-center rounded-xl bg-gray-100 px-5 py-4">
+            ようこそ。UIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートなブログです。
+            <LottieReact animationData={Wave} loop={true} autoplay={true} aria-hidden className="w-[22px]" />
+          </div>
+          <ul className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {data &&
+              data.map((article: Article) => (
                 <li key={article.id}>
                   <Card {...article} />
                 </li>

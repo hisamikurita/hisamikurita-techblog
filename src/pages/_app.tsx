@@ -7,14 +7,16 @@ const App = ({ Component, pageProps }: any) => {
   const { renderGtagScripts } = useGtag();
 
   return (
-    <div className={`${NotoSansJp.variable} ${RobotoCondensed.variable}`}>
-      <div className="font-notosansjp">
-        <HamburgerMenuProvider>
-          {renderGtagScripts()}
-          <Component {...pageProps} />
-        </HamburgerMenuProvider>
+    <>
+      {renderGtagScripts()}
+      <div className={`${NotoSansJp.variable} ${RobotoCondensed.variable}`}>
+        <div className="font-notosansjp">
+          <HamburgerMenuProvider>
+            <Component {...pageProps} />
+          </HamburgerMenuProvider>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
