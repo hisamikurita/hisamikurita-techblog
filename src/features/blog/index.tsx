@@ -2,7 +2,7 @@ import { BaseHead } from "@/components/BaseHead";
 import { MicroCmsBlogDetailDataType } from "@/types";
 import { Layout } from "@/components/Layout";
 import { DateFormatter } from "@/components/DateFormatter";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/constants";
+import { META_DESCRIPTION, SITE_NAME } from "@/constants";
 import { RichEditor } from "@/components/RichEditor";
 import { parseToc } from "@/utils/parseToc";
 
@@ -11,7 +11,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
 
   const metaData = {
     title: `${SITE_NAME} | ${title}`,
-    description: excerpt || SITE_DESCRIPTION,
+    description: excerpt || META_DESCRIPTION,
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
 

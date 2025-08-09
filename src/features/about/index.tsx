@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { BaseHead } from "../../components/BaseHead";
 import { MicroCmsAboutDataType } from "@/types";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/constants";
+import { META_TITLE, META_DESCRIPTION } from "@/constants";
 import { Layout } from "@/components/Layout";
 import { CfAwardHistoryDataType } from "@/types";
 import { CanvasMatter } from "./components/CanvasMatter";
 export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
   const metaData = {
-    title: `${SITE_NAME} | About`,
-    description: SITE_DESCRIPTION,
+    title: META_TITLE,
+    description: META_DESCRIPTION,
   };
 
   const { nameJa, nameEn, intro, awardHistory } = data;
