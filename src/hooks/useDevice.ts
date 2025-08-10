@@ -7,15 +7,15 @@ export const useDevice = () => {
   const isomorphicEffect = useIsomorphicEffect();
 
   isomorphicEffect(() => {
-    const updateIsSp = (e: any) => {
+    const updateIsSp = (e: MediaQueryListEvent) => {
       setIsSp(e.matches);
     };
 
     const mql = window.matchMedia(MQ_MAX);
     mql.addEventListener("change", updateIsSp);
-    updateIsSp(mql);
+    setIsSp(mql.matches);
 
-    return () => window.removeEventListener("resize", updateIsSp);
+    return () => mql.removeEventListener("change", updateIsSp);
   }, []);
 
   return { isSp };

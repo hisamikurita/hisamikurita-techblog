@@ -1,4 +1,6 @@
-# hisamikurita-techblog
+# 🔴 MARON DEV
+
+<img src="./public/ogp.jpg" />
 
 ## Technologies
 
@@ -19,9 +21,9 @@
 
 ## Local Setup
 
-1. Creating Env File
-
 Contact the operator if you want to get the value of an env variable
+
+1. Creating Env File
 
 ```bash
 cp .env.sample .env

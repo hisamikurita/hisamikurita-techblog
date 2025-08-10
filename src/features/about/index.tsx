@@ -8,7 +8,7 @@ import LottieReact from "lottie-react";
 import Trophy from "../../../public/lottie/trophy.json";
 import GoldMedal from "../../../public/lottie/gold-medal.json";
 
-export const PageAbout: React.FC<MicroCmsAboutDataType> = (data) => {
+export const PageAbout = (data: MicroCmsAboutDataType) => {
   const metaData = {
     title: META_TITLE,
     description: META_DESCRIPTION,

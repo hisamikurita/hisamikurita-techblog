@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
   const { title, description, thumbnail } = data;
   const router = useRouter();
-  const currentUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+  const currentUrl = process.env.NEXT_PUBLIC_SITE_URL;
   const ogp = thumbnail ? thumbnail : `${currentUrl}${URL_DEFAULT_OGP}`;
   const canonicalUrl = `${currentUrl}${router.asPath}`;
 

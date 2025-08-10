@@ -1,4 +1,5 @@
-name: lolipop
+name: Deploy
+
 on: #トリガーを設定
   #下記ブランチにpushされたら実行
   push:
@@ -24,7 +25,16 @@ jobs: #実行するジョブを指定する
       - name: 💻 Setup node
         uses: actions/setup-node@v3 #公式のアクションを使用する
         with: #引数でバージョン指定
-          node-version: "16"
+          node-version: "18"
+
+      #モジュールのキャッシュ
+      - name: ⚡ Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       #node moduleをインストール
       - name: 😉 Install modules
