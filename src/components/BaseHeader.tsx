@@ -43,7 +43,7 @@ export const BaseHeader = () => {
                     <ReactSVG src="/icons/github.svg" aria-label="Githubを新規タブで開きます" className="h-4 w-4 text-primary" />
                   </a>
                   <a href="mailto:kuritahisami@gmail.com">
-                    <ReactSVG src="/icons/mail.svg" aria-label="メールアプリを起動します" className="relative top-[1px] h-4 w-4 text-primary" />
+                    <ReactSVG src="/icons/mail.svg" aria-label="メールアプリを起動します" className="h-4 w-4 text-primary" />
                   </a>
                 </div>
               </ul>
@@ -63,7 +63,7 @@ export const BaseHeader = () => {
                         <li key={index}>
                           <Link data-menu="sp" href={menu.url} className="flex items-center justify-between py-[10px] font-roboto font-semibold">
                             {menu.name}
-                            <ArrowRightIcon width={20} height={20} className="relative top-[-1px]" />
+                            <ArrowRightIcon width={20} height={20} className="relative top-[-1px] h-5 w-5" />
                           </Link>
                         </li>
                       ))}
