@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      colors: {
+        primary: "#D46666",
+      },
       fontFamily: {
         notosansjp: ["var(--font-noto-sans-jp)"],
         roboto: ["var(--font-roboto-condensed)"],

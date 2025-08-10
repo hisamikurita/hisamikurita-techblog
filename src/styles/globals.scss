@@ -12,8 +12,16 @@
     @apply tracking-[.12em];
   }
 
+  svg {
+    @apply h-full w-full;
+  }
+
   .c-main-container {
     @apply mx-auto w-full max-w-[1180px] px-[30px] md:px-[40px];
+  }
+
+  .c-sub-container {
+    @apply w-full max-w-[786px];
   }
 
   .custom-editor-container {

@@ -15,8 +15,8 @@ export const META_DESCRIPTION = "東京で働くUIデザイナー + クリエイ
 export const MQ_MAX = "(max-width: 767px)" as const;
 
 export const MENUS = [
-  { name: "Blog", url: URL_HOME },
-  { name: "About", url: URL_ABOUT },
+  { name: "BLOG", url: URL_HOME },
+  { name: "ABOUT", url: URL_ABOUT },
 ] as const;
 
 export const SOURCE = {

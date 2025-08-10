@@ -1,6 +1,5 @@
 import { BaseHead } from "@/components/BaseHead";
 import { MicroCmsBlogDetailDataType } from "@/types";
-import { Layout } from "@/components/Layout";
 import { DateFormatter } from "@/components/DateFormatter";
 import { META_DESCRIPTION, SITE_NAME } from "@/constants";
 import { RichEditor } from "@/components/RichEditor";
@@ -18,7 +17,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   const tocData = parseToc({ body });
 
   return (
-    <Layout>
+    <>
       <BaseHead {...metaData} />
       <div className="pb-[120px] pt-[60px]">
         <div className="h-[200px] md:h-[260px] xl:h-[320px]">
@@ -53,6 +52,6 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };

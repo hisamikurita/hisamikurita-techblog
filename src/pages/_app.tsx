@@ -2,6 +2,7 @@ import "@/styles/globals.scss";
 import { NotoSansJp, RobotoCondensed } from "@/utils/font";
 import { HamburgerMenuProvider } from "@/providers/hamburgerMenu";
 import { useGtag } from "@/hooks/useGtag";
+import { Layout } from "@/components/Layout";
 
 const App = ({ Component, pageProps }: any) => {
   const { renderGtagScripts } = useGtag();
@@ -12,7 +13,9 @@ const App = ({ Component, pageProps }: any) => {
       <div className={`${NotoSansJp.variable} ${RobotoCondensed.variable}`}>
         <div className="font-notosansjp">
           <HamburgerMenuProvider>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </HamburgerMenuProvider>
         </div>
       </div>
