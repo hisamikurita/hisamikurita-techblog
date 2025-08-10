@@ -25,14 +25,14 @@
   }
 
   .custom-editor-container {
-    @apply mx-auto w-full max-w-[1040px] px-[30px] md:px-[40px];
+    @apply w-full;
   }
 
   .editor {
-    @apply text-[18px] leading-[1.7] tracking-[.05em];
+    @apply text-[17px] leading-[1.9] tracking-[.08em];
 
     & h2 {
-      @apply mb-[24px] mt-[52px] text-[22px] font-bold;
+      @apply mb-[24px] mt-[52px] border-b border-dashed border-primary pb-1 text-[22px] font-bold;
     }
 
     & h3 {
@@ -44,11 +44,11 @@
     }
 
     & a {
-      @apply break-all text-sky-600;
+      @apply break-all text-primary;
     }
 
     & img {
-      @apply w-full;
+      @apply w-full rounded-xl border border-gray-300;
     }
 
     & code {
