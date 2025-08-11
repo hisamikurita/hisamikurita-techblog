@@ -40,7 +40,7 @@
     }
 
     & ul {
-      @apply grid list-inside list-disc gap-[4px];
+      @apply my-6 grid list-inside list-disc gap-[4px];
     }
 
     & a {
@@ -52,7 +52,7 @@
     }
 
     & code {
-      @apply rounded-[5px] px-[4px] pb-[2px] font-notosansjp;
+      @apply rounded-[5px] bg-gray-100 px-2 pb-[2px] font-notosansjp;
     }
 
     & a[target="_blank"] {

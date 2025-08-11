@@ -10,7 +10,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   const { title, thumbnail, body, excerpt, publishedAt, updatedAt } = data;
 
   const metaData = {
-    title: `${SITE_NAME} | ${title}`,
+    title: `${title} | ${SITE_NAME}`,
     description: excerpt || META_DESCRIPTION,
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
