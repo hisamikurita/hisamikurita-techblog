@@ -9,7 +9,7 @@ import Smile from "../../public/lottie/smile.json";
 import Rocket from "../../public/lottie/rocket.json";
 import WritingHand from "../../public/lottie/writing-hand.json";
 
-export const Card = (article: Article) => {
+export const CardArticle = (article: Article) => {
   const { id, thumbnail, title, publishedAt, source, emoji, slug } = article;
 
   const borderStyle = {

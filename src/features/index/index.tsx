@@ -1,4 +1,4 @@
-import { Card } from "@/components/Card";
+import { CardArticle } from "@/components/CardArticle";
 import { BaseHead } from "@/components/BaseHead";
 import { META_TITLE, META_DESCRIPTION } from "@/constants";
 import { Article } from "@/types";
@@ -24,7 +24,7 @@ export const PageIndex = ({ data }: { data: Article[] }) => {
             {data &&
               data.map((article: Article) => (
                 <li key={article.id}>
-                  <Card {...article} />
+                  <CardArticle {...article} />
                 </li>
               ))}
           </ul>
