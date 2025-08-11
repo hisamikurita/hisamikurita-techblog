@@ -7,8 +7,10 @@ import { parseToc } from "@/utils/parseToc";
 import { ReactSVG } from "react-svg";
 import { Toc } from "@/components/Toc";
 import { CardProfile } from "@/components/CardProfile";
+import { useDevice } from "@/hooks/useDevice";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
+  const { isSp } = useDevice();
   const { title, thumbnail, body, excerpt, publishedAt, updatedAt } = data;
 
   const metaData = {
@@ -24,7 +26,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
       <BaseHead {...metaData} />
       <div className="pb-10 pt-[60px]">
         <div className="c-main-container">
-          <h1 className="mt-8 rounded-xl bg-gray-100 px-5 py-4 text-xl font-bold">{title}</h1>
+          <h1 className="mt-8 rounded-xl bg-gray-100 px-5 py-4 text-[22px] font-bold">{title}</h1>
           <div className="mt-4 flex flex-wrap gap-2 md:gap-3">
             <div className="flex items-center gap-2">
               <ReactSVG src="/icons/calender.svg" aria-hidden className="h-[13px] w-[13px] text-gray-400" />
@@ -41,15 +43,24 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
                 <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
               </div>
               <div className="custom-editor-container">
-                <div className="mt-10">
-                  <Toc toc={tocData} />
-                </div>
+                {isSp && (
+                  <div className="mt-8 block md:hidden">
+                    <Toc toc={tocData} />
+                  </div>
+                )}
                 <div className="mt-13">
                   <RichEditor body={body} />
                 </div>
               </div>
             </div>
-            <CardProfile />
+            <div>
+              <CardProfile />
+              {!isSp && (
+                <div className="sticky top-[84px] mt-8 hidden md:block">
+                  <Toc toc={tocData} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

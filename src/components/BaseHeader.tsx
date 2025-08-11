@@ -28,7 +28,7 @@ export const BaseHeader = () => {
             </Link>
           </p>
           {!isSp && (
-            <nav>
+            <nav className="hidden md:block">
               <ul className="mt-[2px] flex items-center gap-6">
                 {MENUS.map((menu, index) => (
                   <li key={index} className="font-roboto font-semibold tracking-wide">
