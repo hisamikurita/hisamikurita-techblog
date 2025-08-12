@@ -23,3 +23,5 @@ export const SOURCE = {
   MICROCMS: "microcms",
   ZENN: "zenn",
 } as const;
+
+export const presetURLs = ["github.com"];

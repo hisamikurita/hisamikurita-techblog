@@ -31,6 +31,18 @@
   .editor {
     @apply text-[17px] leading-[1.9] tracking-[.08em];
 
+    & .generate-card-preview {
+      @apply flex h-[72px] items-center overflow-hidden rounded-xl border border-gray-400 md:h-[120px];
+
+      & img {
+        @apply h-[72px] w-[138px] rounded-none border-none md:h-[120px] md:w-[230px];
+      }
+
+      & span {
+        @apply m-4 line-clamp-2 text-sm leading-[1.56] text-black md:m-6 md:text-base;
+      }
+    }
+
     & h2 {
       @apply mb-[24px] mt-[52px] border-b border-dashed border-primary pb-2 text-[22px] font-bold leading-[1.4];
     }
@@ -48,7 +60,7 @@
     }
 
     & img {
-      @apply w-full rounded-xl border border-gray-300;
+      @apply w-full rounded-xl border border-gray-300 object-cover;
     }
 
     & code {

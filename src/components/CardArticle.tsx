@@ -8,6 +8,8 @@ import Seal from "../../public/lottie/seal.json";
 import Smile from "../../public/lottie/smile.json";
 import Rocket from "../../public/lottie/rocket.json";
 import WritingHand from "../../public/lottie/writing-hand.json";
+import PartyingFace from "../../public/lottie/partying-face.json";
+import Ghost from "../../public/lottie/ghost.json";
 
 export const CardArticle = (article: Article) => {
   const { id, thumbnail, title, publishedAt, source, emoji, slug } = article;
@@ -26,6 +28,8 @@ export const CardArticle = (article: Article) => {
     "🦭": Seal,
     "🚀": Rocket,
     "✍️": WritingHand,
+    "🥳": PartyingFace,
+    "👻": Ghost,
   };
 
   const borderClass = borderStyle[source as keyof typeof borderStyle];
