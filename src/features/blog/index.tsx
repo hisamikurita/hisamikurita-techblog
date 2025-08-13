@@ -8,6 +8,7 @@ import { ReactSVG } from "react-svg";
 import { Toc } from "@/components/Toc";
 import { CardProfile } from "@/components/CardProfile";
 import { useDevice } from "@/hooks/useDevice";
+import { ButtonShare } from "@/components/ButtonShare";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   const { isSp } = useDevice();
@@ -18,6 +19,8 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
     description: excerpt || META_DESCRIPTION,
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
+
+  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${data.id}`;
 
   const tocData = parseToc({ body });
 
@@ -60,6 +63,18 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
                   <Toc toc={tocData} />
                 </div>
               )}
+            </div>
+          </div>
+          <div className="grid grid-cols-3">
+            <div className="c-sub-container col-span-3 md:col-span-2">
+              <div className="mt-16 rounded-xl border-dashed  border-primary bg-gray-100 p-4">
+                <p className="text-center">記事をシェアする</p>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  <ButtonShare variant="x" url={currentUrl} title={title} />
+                  <ButtonShare variant="fb" url={currentUrl} title={title} />
+                  <ButtonShare variant="hatena" url={currentUrl} title={title} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
