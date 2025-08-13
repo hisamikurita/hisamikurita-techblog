@@ -24,4 +24,4 @@ export const SOURCE = {
   ZENN: "zenn",
 } as const;
 
-export const presetURLs = ["github.com"];
+export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com"];

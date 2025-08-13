@@ -12,10 +12,10 @@ export const Toc = ({ toc }: { toc: Toc[] }) => {
         <ReactSVG src="/icons/toc.svg" aria-hidden className=" relative top-[1px] h-7 w-7" />
         目次
       </h2>
-      <ul className="mt-3 grid gap-2">
+      <ul className="ml-[14px] mt-3 grid gap-2">
         {toc &&
           toc.map((data) => (
-            <li key={data.id} className="text-sm">
+            <li key={data.id} className="-indent-[14px] text-sm">
               <a href={`#${data.id}`}>・{data.title}</a>
             </li>
           ))}
