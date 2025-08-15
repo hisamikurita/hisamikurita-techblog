@@ -3,5 +3,6 @@
   "rules": {
     "no-console": "error",
     "@next/next/no-img-element": "off"
-  }
+  },
+  "ignorePatterns": ["node_modules/", ".next/", "public/lottie/*.json", "rss.ts"]
 }

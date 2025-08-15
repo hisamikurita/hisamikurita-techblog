@@ -63,8 +63,12 @@
       @apply w-full rounded-xl border border-gray-300 object-cover;
     }
 
-    & code {
-      @apply rounded-[5px] bg-gray-100 px-2 pb-[2px] font-notosansjp;
+    & pre {
+      @apply my-6;
+
+      & code {
+        @apply rounded-md;
+      }
     }
 
     & a[target="_blank"] {

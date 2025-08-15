@@ -34,6 +34,7 @@ export type MicroCmsBlogDetailDataType = {
     url?: string;
     width?: string;
     height?: string;
+    mimeType?: string;
   };
 };
 
@@ -92,5 +93,6 @@ export type Article = {
     url?: string;
     width?: string;
     height?: string;
+    mimeType?: string;
   };
 };

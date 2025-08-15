@@ -45,6 +45,9 @@ export const BaseHeader = () => {
                   <a href="mailto:kuritahisami@gmail.com">
                     <ReactSVG src="/icons/mail.svg" aria-label="メールアプリを起動します" className="h-4 w-4 text-primary" />
                   </a>
+                  <a href="/rss.xml">
+                    <ReactSVG src="/icons/rss.svg" aria-label="RSS" className="h-[14px] w-[14px] text-primary" />
+                  </a>
                 </div>
               </ul>
             </nav>

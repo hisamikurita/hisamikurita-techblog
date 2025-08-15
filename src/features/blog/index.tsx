@@ -70,10 +70,10 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
           <div className="grid grid-cols-3">
             <div className="c-sub-container col-span-3 md:col-span-2">
               <div className="mt-16 rounded-xl border-dashed  border-primary bg-gray-100 p-4">
-                <p className="flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   この記事をシェアする
                   <LottieReact animationData={HeartFace} loop={true} autoplay={true} aria-hidden className="relative top-[0.8px] w-6" />
-                </p>
+                </div>
                 <div className="mt-4 grid grid-cols-3 gap-2">
                   <ButtonShare variant="x" url={currentUrl} title={title} />
                   <ButtonShare variant="fb" url={currentUrl} title={title} />

@@ -1,0 +1,23 @@
+<rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>MARON DEV | UIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートなブログ</title>
+    <description>東京で働くUIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートな情報発信ブログ</description>
+    <link>https://hsmkrt-tech.com/</link>
+    <item>
+      <title>【WEBデザインアワード受賞】フロントエンドエンジニアがポートフォリオを公開しました</title>
+      <description>microCMSを活用して制作したポートフォリオの制作過程を紹介。Awwwards SOTD・Developer Awardを受賞したフロントエンド実装の裏側をまとめました。</description>
+      <link>https://hsmkrt-tech.com/blog/s9hkb47d7x</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/s9hkb47d7x</guid>
+      <pubDate>Sun, 13 Nov 2022 15:17:00 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/8e067b6678d5454e8304d75a1d261aee/ogp.webp?fm=jpeg&amp;q=80"/>
+    </item>
+    <item>
+      <title>【個人ブログ開設】microCMSを使用してSSGなWEBサイトを制作する</title>
+      <description>microCMSを使用して個人ブログを開設しました。技術選定やシステム構成図、機能実装の工夫、今後の方針をまとめています。</description>
+      <link>https://hsmkrt-tech.com/blog/3e8yuok9663</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/3e8yuok9663</guid>
+      <pubDate>Mon, 07 Nov 2022 15:47:18 GMT</pubDate>
+      <media:content type="image/jpeg" width="1036" height="640" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/98f01bf5bf424a15a4ed7556fdadea18/microcms.webp?fm=jpeg&amp;q=80"/>
+    </item>
+  </channel>
+</rss>
