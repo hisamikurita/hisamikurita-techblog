@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { URL_FAVICON, URL_APPLE_TOUCH_ICON, URL_DEFAULT_OGP } from "@/constants";
+import { URL_FAVICON, URL_APPLE_TOUCH_ICON, URL_DEFAULT_OGP, SITE_NAME } from "@/constants";
 import { BaseHeadDataType } from "@/types";
 import { useRouter } from "next/router";
 
@@ -16,6 +16,7 @@ export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
       <link rel="icon" href={URL_FAVICON} />
       <link rel="apple-touch-icon" href={URL_APPLE_TOUCH_ICON} />
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} RSS Feed`} href="https://hsmkrt-tech.com/rss.xml" />
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
