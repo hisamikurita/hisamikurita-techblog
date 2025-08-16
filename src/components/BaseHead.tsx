@@ -16,7 +16,7 @@ export const BaseHead: React.FC<BaseHeadDataType> = (data) => {
       <link rel="icon" href={URL_FAVICON} />
       <link rel="apple-touch-icon" href={URL_APPLE_TOUCH_ICON} />
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} RSS Feed`} href="https://hsmkrt-tech.com/rss.xml" />
+      <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} RSS Feed`} href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss.xml`} />
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
