@@ -7,6 +7,7 @@ import { Tabs } from "radix-ui";
 import LottieReact from "lottie-react";
 import Trophy from "../../../public/lottie/trophy.json";
 import GoldMedal from "../../../public/lottie/gold-medal.json";
+import { CONTACT } from "@/constants";
 
 export const PageAbout = (data: MicroCmsAboutDataType) => {
   const metaData = {
@@ -27,8 +28,8 @@ export const PageAbout = (data: MicroCmsAboutDataType) => {
             <p className="mt-10">このブログは東京で働くUIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートな情報発信ブログです。</p>
             <div className="mt-8">
               副業でWEBサイト等の制作も行なっているので、ご相談をご希望の方は、kuritahisami@gmail.com
-              <a href="mailto:kuritahisami@gmail.com" className="relative top-[1px] mx-1 inline-flex border-b border-primary pb-[1px] text-primary">
-                <ReactSVG src="/icons/mail.svg" aria-label="メールアプリを起動します" className="h-4 w-4" />
+              <a href={CONTACT.mail.url} className="relative top-[1px] mx-1 inline-flex border-b border-primary pb-[1px] text-primary">
+                <ReactSVG src="/icons/mail.svg" aria-label={CONTACT.mail.label} className={CONTACT.mail.size.base} />
               </a>
               にご連絡ください。
             </div>

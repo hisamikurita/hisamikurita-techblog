@@ -1,3 +1,4 @@
+import { SNS } from "@/constants";
 import { cn } from "@/libs/tailwindMerge";
 import Image from "next/image";
 import { ReactSVG } from "react-svg";
@@ -18,16 +19,18 @@ export const CardProfile = ({ className }: Props) => {
           プログラミングが好きで休みの日もコードを書いて、モノづくりを楽しんでいる。文章を書くのは苦手。
         </p>
       </div>
-      <div className="flex items-center justify-center gap-5 rounded-b-xl bg-primary py-5">
-        <a href="https://twitter.com/kurichans_1996" target="_blank" rel="noopener noreferrer">
-          <ReactSVG src="/icons/x.svg" aria-label="Xを新規タブで開きます" className="h-[18px] w-[18px] text-white" />
-        </a>
-        <a href="https://github.com/hisamikurita" target="_blank" rel="noopener noreferrer">
-          <ReactSVG src="/icons/github.svg" aria-label="Githubを新規タブで開きます" className="h-5 w-5 text-white" />
-        </a>
-        <a href="mailto:kuritahisami@gmail.com">
-          <ReactSVG src="/icons/mail.svg" aria-label="メールアプリを起動します" className="h-5 w-5 text-white" />
-        </a>
+      <div className="flex items-center justify-center gap-4 rounded-b-xl bg-primary py-4">
+        <div className="flex shrink-0 items-center gap-2">
+          <p className="font-roboto font-bold text-white">FOLLOW</p>
+          <ReactSVG src="/icons/chevron-right.svg" aria-hidden />
+        </div>
+        <div className="flex items-center gap-3">
+          {Object.entries(SNS).map(([key, sns]) => (
+            <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label} className="rounded-md bg-[#E68282] p-2">
+              <ReactSVG src={`/icons/${key}.svg`} className={cn(sns.size.base, "text-white")} />
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

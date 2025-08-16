@@ -24,4 +24,44 @@ export const SOURCE = {
   ZENN: "zenn",
 } as const;
 
+export const SNS = {
+  x: {
+    url: "https://twitter.com/kurichans_1996",
+    label: "Xを新規タブで開きます",
+    blank: true,
+    size: {
+      base: "h-[14px] w-[14px]",
+      large: "h-[18px] w-[18px]",
+    },
+  },
+  github: {
+    url: "https://github.com/hisamikurita",
+    label: "Githubを新規タブで開きます",
+    blank: true,
+    size: {
+      base: "h-4 w-4",
+      large: "h-5 w-5",
+    },
+  },
+};
+
+export const CONTACT = {
+  mail: {
+    url: "mailto:kuritahisami@gmail.com",
+    label: "メールアプリを起動します",
+    blank: false,
+    size: {
+      base: "h-4 w-4",
+      large: "h-5 w-5",
+    },
+  },
+};
+
+export const RSS = {
+  url: "/rss.xml",
+  label: "RSS",
+  blank: false,
+  size: "h-[14px] w-[14px]",
+};
+
 export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com"];

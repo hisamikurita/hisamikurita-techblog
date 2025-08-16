@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { URL_HOME, MENUS, SITE_NAME, URL_ABOUT } from "@/constants";
+import { URL_HOME, MENUS, SITE_NAME, URL_ABOUT, SNS, RSS, CONTACT } from "@/constants";
 import { useDevice } from "@/hooks/useDevice";
 import { HamburgerMenuIcon, Cross1Icon, ArrowRightIcon } from "@radix-ui/react-icons";
 import { useHamburgerMenu } from "@/hooks/useHamburgerMenu";
@@ -7,6 +7,7 @@ import { useFocusTrap } from "@/hooks/useFocusTrap";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { ReactSVG } from "react-svg";
+import { cn } from "@/libs/tailwindMerge";
 
 export const BaseHeader = () => {
   const { isSp } = useDevice();
@@ -36,17 +37,16 @@ export const BaseHeader = () => {
                   </li>
                 ))}
                 <div className="flex items-center gap-3">
-                  <a href="https://twitter.com/kurichans_1996" target="_blank" rel="noopener noreferrer">
-                    <ReactSVG src="/icons/x.svg" aria-label="Xを新規タブで開きます" className="h-[14px] w-[14px] text-primary" />
+                  {Object.entries(SNS).map(([key, sns]) => (
+                    <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label}>
+                      <ReactSVG src={`/icons/${key}.svg`} className={cn(sns.size.base, "text-primary")} />
+                    </a>
+                  ))}
+                  <a href={CONTACT.mail.url} aria-label={CONTACT.mail.label}>
+                    <ReactSVG src="/icons/mail.svg" className={cn(CONTACT.mail.size.base, "text-primary")} />
                   </a>
-                  <a href="https://github.com/hisamikurita" target="_blank" rel="noopener noreferrer">
-                    <ReactSVG src="/icons/github.svg" aria-label="Githubを新規タブで開きます" className="h-4 w-4 text-primary" />
-                  </a>
-                  <a href="mailto:kuritahisami@gmail.com">
-                    <ReactSVG src="/icons/mail.svg" aria-label="メールアプリを起動します" className="h-4 w-4 text-primary" />
-                  </a>
-                  <a href="/rss.xml">
-                    <ReactSVG src="/icons/rss.svg" aria-label="RSS" className="h-[14px] w-[14px] text-primary" />
+                  <a href={RSS.url} target={RSS.blank ? "_blank" : "_self"} {...(RSS.blank && { rel: "noopener noreferrer" })} aria-label={RSS.label}>
+                    <ReactSVG src="/icons/rss.svg" className={cn(RSS.size, "text-primary")} />
                   </a>
                 </div>
               </ul>
@@ -61,7 +61,7 @@ export const BaseHeader = () => {
               <div className="absolute left-[0px] top-[60px] w-full" aria-hidden={!isMenuOpen ? true : false} {...(!isMenuOpen && { hidden: true })}>
                 <div className="bg-white">
                   <nav>
-                    <ul className="px-[30px] py-[16px] ">
+                    <ul className="px-[30px] py-4">
                       {MENUS.map((menu, index) => (
                         <li key={index}>
                           <Link data-menu="sp" href={menu.url} className="flex items-center justify-between py-[10px] font-roboto font-semibold">
@@ -72,6 +72,19 @@ export const BaseHeader = () => {
                       ))}
                     </ul>
                   </nav>
+                  <div className="flex items-center justify-center gap-5 bg-primary py-4">
+                    {Object.entries(SNS).map(([key, sns]) => (
+                      <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label} className="rounded-md bg-[#E68282] p-2">
+                        <ReactSVG src={`/icons/${key}.svg`} className={cn(sns.size.base, "text-white")} />
+                      </a>
+                    ))}
+                    <a href={CONTACT.mail.url} aria-label={CONTACT.mail.label} className="rounded-md bg-[#E68282] p-2">
+                      <ReactSVG src="/icons/mail.svg" className={cn(CONTACT.mail.size.base, "text-white")} />
+                    </a>
+                    <a href={RSS.url} target={RSS.blank ? "_blank" : "_self"} {...(RSS.blank && { rel: "noopener noreferrer" })} aria-label={RSS.label} className="rounded-md bg-[#E68282] p-2">
+                      <ReactSVG src="/icons/rss.svg" className={cn(RSS.size, "text-white")} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </>
