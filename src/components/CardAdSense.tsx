@@ -23,5 +23,5 @@ export const CardAdSense = ({ className, googleAdsensePublisherId, adSlot, adFor
     }
   }, []);
 
-  return <ins className={cn("adsbygoogle", className)} data-ad-client={googleAdsensePublisherId} data-ad-slot={adSlot} data-ad-format={adFormat} data-ad-layout={adLayout} data-full-width-responsive={`${fullWidthResponsive}`} />;
+  return <ins className={cn("adsbygoogle bg-gray-100", className)} data-ad-client={googleAdsensePublisherId} data-ad-slot={adSlot} data-ad-format={adFormat} data-ad-layout={adLayout} data-full-width-responsive={`${fullWidthResponsive}`} />;
 };

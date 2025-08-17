@@ -59,11 +59,11 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="flex flex-col gap-8">
               <CardProfile />
-              <CardAdSense googleAdsensePublisherId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || ""} adLayout="in-article" adSlot="6415242179" adFormat="fluid, auto" />
+              <CardAdSense className="block aspect-[16/9] w-full" googleAdsensePublisherId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || ""} adLayout="in-article" adSlot="6415242179" adFormat="fluid, auto" />
               {!isSp && (
-                <div className="sticky top-[84px] mt-8 hidden md:block">
+                <div className="sticky top-[84px] hidden md:block">
                   <Toc toc={tocData} />
                 </div>
               )}
