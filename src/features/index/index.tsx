@@ -1,9 +1,10 @@
 import { CardArticle } from "@/components/CardArticle";
 import { BaseHead } from "@/components/BaseHead";
-import { META_TITLE, META_DESCRIPTION } from "@/constants";
+import { META_TITLE, META_DESCRIPTION, ADSENSE } from "@/constants";
 import { Article } from "@/types";
 import LottieReact from "lottie-react";
 import Wave from "../../../public/lottie/wave.json";
+import { CardAdSense } from "@/components/CardAdSense";
 
 export const PageIndex = ({ data }: { data: Article[] }) => {
   const metaData = {
@@ -21,12 +22,18 @@ export const PageIndex = ({ data }: { data: Article[] }) => {
             <LottieReact animationData={Wave} loop={true} autoplay={true} aria-hidden className="relative top-1 inline-block w-[22px]" />
           </div>
           <ul className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {data &&
-              data.map((article: Article) => (
+            {data.map((article: Article, index) => (
+              <>
+                {index === 6 && (
+                  <li>
+                    <CardAdSense className="block h-full w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot[0]} />
+                  </li>
+                )}
                 <li key={article.id}>
                   <CardArticle {...article} />
                 </li>
-              ))}
+              </>
+            ))}
           </ul>
         </div>
       </div>
