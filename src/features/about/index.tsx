@@ -90,8 +90,8 @@ export const PageAbout = (data: MicroCmsAboutDataType) => {
             </div>
             <div className="flex flex-col gap-4">
               <h2 className="border-b border-primary pb-1 text-lg">PR</h2>
-              <CardAdSense className="block aspect-[16/9] w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot} />
-              <CardAdSense className="block aspect-[16/9] w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot} />
+              <CardAdSense className="block aspect-[16/9] w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot[0]} />
+              <CardAdSense className="block aspect-[16/9] w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot[1]} />
             </div>
           </div>
         </div>

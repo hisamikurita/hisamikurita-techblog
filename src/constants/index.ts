@@ -68,5 +68,5 @@ export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com"];
 
 export const ADSENSE = {
   googleAdsensePublisherId: process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || "",
-  adSlot: "6415242179",
+  adSlot: ["6415242179", "9487595248", "2990755062"],
 };
