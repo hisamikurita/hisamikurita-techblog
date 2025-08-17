@@ -1,5 +1,6 @@
 import { cn } from "@/libs/tailwindMerge";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
+import { ReactSVG } from "react-svg";
 
 declare global {
   interface Window {
@@ -23,5 +24,10 @@ export const CardAdSense = ({ className, googleAdsensePublisherId, adSlot, adFor
     }
   }, []);
 
-  return <ins className={cn("adsbygoogle bg-gray-100", className)} data-ad-client={googleAdsensePublisherId} data-ad-slot={adSlot} data-ad-format={adFormat} data-ad-layout={adLayout} data-full-width-responsive={`${fullWidthResponsive}`} />;
+  return (
+    <div className={cn("relative bg-gray-100", className)}>
+      <ReactSVG src="/icons/loading.svg" className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]" />
+      <ins className={cn("adsbygoogle relative z-10", className)} data-ad-client={googleAdsensePublisherId} data-ad-slot={adSlot} data-ad-format={adFormat} data-ad-layout={adLayout} data-full-width-responsive={`${fullWidthResponsive}`} />
+    </div>
+  );
 };
