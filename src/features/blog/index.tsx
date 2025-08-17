@@ -1,7 +1,7 @@
 import { BaseHead } from "@/components/BaseHead";
 import { MicroCmsBlogDetailDataType } from "@/types";
 import { DateFormatter } from "@/components/DateFormatter";
-import { META_DESCRIPTION, SITE_NAME } from "@/constants";
+import { ADSENSE, META_DESCRIPTION, SITE_NAME } from "@/constants";
 import { RichEditor } from "@/components/RichEditor";
 import { parseToc } from "@/utils/parseToc";
 import { ReactSVG } from "react-svg";
@@ -61,7 +61,10 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
             </div>
             <div className="flex flex-col gap-8">
               <CardProfile />
-              <CardAdSense className="block aspect-[16/9] w-full" googleAdsensePublisherId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || ""} adLayout="in-article" adSlot="6415242179" adFormat="fluid, auto" />
+              <div>
+                <h2 className="border-b border-primary pb-1 text-lg">PR</h2>
+                <CardAdSense className="mt-4 block aspect-[16/9] w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot} />
+              </div>
               {!isSp && (
                 <div className="sticky top-[84px] hidden md:block">
                   <Toc toc={tocData} />
