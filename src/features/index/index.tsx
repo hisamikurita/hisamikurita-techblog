@@ -25,7 +25,7 @@ export const PageIndex = ({ data }: { data: Article[] }) => {
             {data.map((article: Article, index) => (
               <>
                 {index === 6 && (
-                  <li className="overflow-hidden rounded-lg border-4 border-gray-100">
+                  <li className="overflow-hidden rounded-lg border-4 border-gray-300">
                     <CardAdSense className="block h-full w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot[0]} />
                   </li>
                 )}
