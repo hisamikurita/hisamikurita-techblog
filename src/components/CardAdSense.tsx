@@ -26,7 +26,9 @@ export const CardAdSense = ({ className, googleAdsensePublisherId, adSlot, adFor
 
   return (
     <div className={cn("relative bg-gray-100", className)}>
-      <ReactSVG src="/icons/loading.svg" className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]" />
+      <div className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] ">
+        <ReactSVG src="/icons/loading.svg" className="h-8 w-8 animate-spin" />
+      </div>
       <ins className={cn("adsbygoogle relative z-10", className)} data-ad-client={googleAdsensePublisherId} data-ad-slot={adSlot} data-ad-format={adFormat} data-ad-layout={adLayout} data-full-width-responsive={`${fullWidthResponsive}`} />
     </div>
   );
