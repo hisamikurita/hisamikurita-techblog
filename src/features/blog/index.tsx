@@ -11,6 +11,7 @@ import { useDevice } from "@/hooks/useDevice";
 import { ButtonShare } from "@/components/ButtonShare";
 import LottieReact from "lottie-react";
 import HeartFace from "../../../public/lottie/heart-face.json";
+import { CardAdSense } from "@/components/CardAdSense";
 
 export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   const { isSp } = useDevice();
@@ -60,6 +61,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
             </div>
             <div>
               <CardProfile />
+              <CardAdSense googleAdsensePublisherId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || ""} adLayout="in-article" adSlot="6415242179" adFormat="fluid, auto" />
               {!isSp && (
                 <div className="sticky top-[84px] mt-8 hidden md:block">
                   <Toc toc={tocData} />
