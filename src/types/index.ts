@@ -21,21 +21,8 @@ export type MicroCmsBlogDataType = {
   className?: string;
 };
 
-export type MicroCmsBlogDetailDataType = {
-  id?: string;
-  revisedAt?: string;
-  publishedAt?: string;
-  updatedAt?: string;
-  createdAt?: string;
-  title?: string;
-  body?: string;
-  excerpt?: string;
-  thumbnail?: {
-    url?: string;
-    width?: string;
-    height?: string;
-    mimeType?: string;
-  };
+export type MicroCmsBlogDetailDataType = Article & {
+  relatedArticles?: Article[];
 };
 
 /////////////// About ////////////////

@@ -32,17 +32,17 @@ export const CardArticle = (article: Article) => {
     "👻": Ghost,
   };
 
-  const borderClass = borderStyle[source as keyof typeof borderStyle];
-  const currentHref = href[source as keyof typeof href];
+  const borderClass = borderStyle[source as keyof typeof borderStyle] || "bg-gray-300";
+  const currentHref = href[source as keyof typeof href] || `${URL_BLOG}${id}`;
   const currentEmoji = emojiData[emoji as keyof typeof emojiData] || Smile;
 
   return (
     <article>
-      <Link href={currentHref} target={source === SOURCE.MICROCMS ? "_self" : "_blank"} className={`${borderClass} transition-[transform, shadow] block h-full w-full rounded-xl p-1 shadow-md duration-300 ease-transform hover:-translate-y-1 hover:shadow-2xl`}>
+      <Link href={currentHref} target={source !== SOURCE.ZENN ? "_self" : "_blank"} className={`${borderClass} transition-[transform, shadow] block h-full w-full rounded-xl p-1 shadow-md duration-300 ease-transform hover:-translate-y-1 hover:shadow-2xl`}>
         <div className="relative block overflow-hidden rounded-lg">
           <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-gray-100">
-            {source === SOURCE.MICROCMS && <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />}
             {source === SOURCE.ZENN && <LottieReact animationData={currentEmoji} loop={true} autoplay={true} aria-hidden className="w-20" />}
+            {source !== SOURCE.ZENN && <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />}
           </div>
           <div className="bg-white px-5 pb-4 pt-5">
             <h2 className="line-clamp-3 h-[86px] text-lg leading-[1.6]">{title}</h2>
