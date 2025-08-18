@@ -78,7 +78,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
                         </div>
                         あわせて読みたい
                       </div>
-                      <ul className="mt-8 grid grid-cols-2 gap-5">
+                      <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
                         {relatedArticles?.map((article: Article) => (
                           <li key={article.id}>
                             <CardArticle {...article} />
