@@ -55,8 +55,16 @@
       @apply my-6 grid list-inside list-disc gap-[4px];
     }
 
+    & p {
+      @apply my-7;
+    }
+
     & a {
       @apply break-all text-primary;
+    }
+
+    & figure {
+      @apply my-7;
     }
 
     & img {
