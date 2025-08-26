@@ -48,7 +48,7 @@
     }
 
     & h3 {
-      @apply mb-[22px] mt-[44px] text-[20px] font-bold;
+      @apply mb-[22px] mt-[44px] inline-flex table border-b border-primary pb-1 text-[20px] font-bold;
     }
 
     & ul {
@@ -71,8 +71,9 @@
       @apply w-full rounded-xl border border-gray-300 object-cover;
     }
 
-    & code {
-      @apply rounded-[5px] bg-gray-100 px-2 pb-[2px] font-notosansjp;
+    & p > code,
+    & li > code {
+      @apply rounded-[5px] bg-gray-100 pb-[2px] pl-2 pr-[6px] font-notosansjp;
     }
 
     & pre {

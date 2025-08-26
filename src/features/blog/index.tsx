@@ -1,7 +1,7 @@
 import { BaseHead } from "@/components/BaseHead";
 import { Article, MicroCmsBlogDetailDataType } from "@/types";
 import { DateFormatter } from "@/components/DateFormatter";
-import { ADSENSE, META_DESCRIPTION, SITE_NAME } from "@/constants";
+import { ADSENSE, ANIMATED_EMOJI, CATEGORY, META_DESCRIPTION, SITE_NAME } from "@/constants";
 import { RichEditor } from "@/features/blog/components/RichEditor";
 import { parseToc } from "@/utils/parseToc";
 import { ReactSVG } from "react-svg";
@@ -13,10 +13,11 @@ import LottieReact from "lottie-react";
 import HeartFace from "../../../public/lottie/heart-face.json";
 import { CardAdSense } from "@/components/CardAdSense";
 import { CardArticle } from "@/components/CardArticle";
+import Smile from "../../../public/lottie/smile.json";
 
-export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
+export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
   const { isSp } = useDevice();
-  const { title, thumbnail, body, excerpt, publishedAt, updatedAt, relatedArticles } = data;
+  const { title, thumbnail, body, excerpt, publishedAt, updatedAt, relatedArticles, category, thumbnailEmoji } = data;
 
   const metaData = {
     title: `${title} | ${SITE_NAME}`,
@@ -25,7 +26,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
   };
 
   const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${data.id}`;
-
+  const currentEmoji = ANIMATED_EMOJI[thumbnailEmoji as keyof typeof ANIMATED_EMOJI] || Smile;
   const tocData = parseToc({ body });
 
   return (
@@ -47,9 +48,18 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
           <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
             {/* 1 ~ 2 列目 */}
             <div className="c-sub-container md:col-span-2">
-              <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-gray-300">
-                <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
-              </div>
+              {category.id === CATEGORY.WORKS && (
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-gray-300">
+                  <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
+                </div>
+              )}
+              {category.id === CATEGORY.TECH && (
+                <div className="mb-6 rounded-xl bg-gradient-to-r from-[#73C5FF] to-[#AB9DFF] p-2">
+                  <div className="flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-gray-100">
+                    <LottieReact animationData={currentEmoji} loop={true} autoplay={true} aria-hidden className="w-[80px] md:w-[124px]" />
+                  </div>
+                </div>
+              )}
               <div className="custom-editor-container">
                 {isSp && (
                   <div className="mt-8 block md:hidden">
@@ -70,7 +80,7 @@ export const PageBlogDetail: React.FC<MicroCmsBlogDetailDataType> = (data) => {
                     </div>
                   </div>
                   <CardAdSense className="mt-12 block w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adFormat="autorelaxed" adSlot={ADSENSE.adSlot[2]} />
-                  {relatedArticles && (
+                  {relatedArticles && relatedArticles.length > 0 && (
                     <div className="mt-12">
                       <div className="flex items-center gap-2 border-b border-primary pb-2 text-lg font-bold text-primary">
                         <div className="flex items-center justify-center rounded-full bg-primary p-2">

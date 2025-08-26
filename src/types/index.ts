@@ -25,6 +25,28 @@ export type MicroCmsBlogDetailDataType = Article & {
   relatedArticles?: Article[];
 };
 
+export type Article = {
+  id: string;
+  revisedAt: string;
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+  title: string;
+  body: string;
+  excerpt: string;
+  category: {
+    id: string;
+    name: string;
+  };
+  thumbnailEmoji?: string;
+  thumbnail?: {
+    url?: string;
+    width?: string;
+    height?: string;
+    mimeType?: string;
+  };
+};
+
 /////////////// About ////////////////
 
 export type MicroCmsAboutDataType = {
@@ -39,47 +61,8 @@ export type MicroCmsAboutDataType = {
   awardHistory?: [CfAwardHistoryDataType];
 };
 
-/////////////// CF ////////////////
-
 export type CfAwardHistoryDataType = {
   title: string;
   award: string;
   link: string;
-};
-
-/////////////// ZENN ////////////////
-
-export type ZennBlogDataType = {
-  articles?: {
-    id: number;
-    title: string;
-    slug: string;
-    published_at: string;
-    emoji: string;
-    path: string;
-    user: {
-      username: string;
-      name: string;
-    };
-  }[];
-};
-
-export type Article = {
-  source?: "microcms" | "zenn";
-  id?: number | string;
-  revisedAt?: string;
-  publishedAt?: string;
-  updatedAt?: string;
-  createdAt?: string;
-  title?: string;
-  body?: string;
-  excerpt?: string;
-  emoji?: string;
-  slug?: string;
-  thumbnail?: {
-    url?: string;
-    width?: string;
-    height?: string;
-    mimeType?: string;
-  };
 };

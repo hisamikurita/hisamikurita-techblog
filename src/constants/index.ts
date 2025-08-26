@@ -1,7 +1,12 @@
+import Seal from "../../public/lottie/seal.json";
+import Rocket from "../../public/lottie/rocket.json";
+import WritingHand from "../../public/lottie/writing-hand.json";
+import PartyingFace from "../../public/lottie/partying-face.json";
+import Ghost from "../../public/lottie/ghost.json";
+
 export const URL_HOME = "/" as const;
 export const URL_ABOUT = "/about/" as const;
 export const URL_BLOG = "/blog/" as const;
-export const URL_ZENN = "https://zenn.dev/kurichan/articles/" as const;
 
 export const URL_FAVICON = "/favicon.ico" as const;
 export const URL_APPLE_TOUCH_ICON = "/apple-touch-icon.png" as const;
@@ -19,9 +24,17 @@ export const MENUS = [
   { name: "ABOUT", url: URL_ABOUT },
 ] as const;
 
-export const SOURCE = {
-  MICROCMS: "microcms",
-  ZENN: "zenn",
+export const CATEGORY = {
+  TECH: "tech",
+  WORKS: "works",
+} as const;
+
+export const ANIMATED_EMOJI = {
+  "🦭": Seal,
+  "🚀": Rocket,
+  "✍️": WritingHand,
+  "🥳": PartyingFace,
+  "👻": Ghost,
 } as const;
 
 export const SNS = {
@@ -64,7 +77,7 @@ export const RSS = {
   size: "h-[14px] w-[14px]",
 };
 
-export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com"];
+export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com", "developer.mozilla.org"];
 
 export const ADSENSE = {
   googleAdsensePublisherId: process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || "",
