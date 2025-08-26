@@ -1,4 +1,3 @@
-import { SOURCE } from "@/constants";
 import { PageIndex } from "@/features/index";
 import { getBlogList as getMicrocmsBlogList } from "@/libs/microcms";
 import { Article } from "@/types";
