@@ -4,6 +4,14 @@
     <description>東京で働くUIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートな情報発信ブログ</description>
     <link>https://hsmkrt-tech.com/</link>
     <item>
+      <title>Intersection Observer で画面外のCSSアニメーションを停止してパフォーマンスを改善する</title>
+      <description>画面外のCSSアニメーションは、実はパフォーマンス低下の原因かもしれません。この記事では、「Intersection Observer」を使って、見えないアニメーションを効率的に停止させる方法を解説します。ウェブサイトの速度改善に役立つ具体的な実装テクニックを学び、ユーザー体験を向上させましょう。</description>
+      <link>https://hsmkrt-tech.com/blog/723tpoacj</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/723tpoacj</guid>
+      <pubDate>Tue, 26 Aug 2025 14:41:30 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/bbcd4ca8bd2e4c48b0ac83657dd331e8/seal.jpg?fm=jpeg&amp;q=80"/>
+    </item>
+    <item>
       <title>【WEBデザインアワード受賞】フロントエンドエンジニアがポートフォリオを公開しました</title>
       <description>microCMSを活用して制作したポートフォリオの制作過程を紹介。Awwwards SOTD・Developer Awardを受賞したフロントエンド実装の裏側をまとめました。</description>
       <link>https://hsmkrt-tech.com/blog/s9hkb47d7x</link>

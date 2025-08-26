@@ -48,12 +48,12 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
           <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
             {/* 1 ~ 2 列目 */}
             <div className="c-sub-container md:col-span-2">
-              {category.id === CATEGORY.WORKS && (
+              {category?.id === CATEGORY.WORKS && (
                 <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-gray-300">
                   <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
                 </div>
               )}
-              {category.id === CATEGORY.TECH && (
+              {category?.id === CATEGORY.TECH && (
                 <div className="mb-6 rounded-xl bg-gradient-to-r from-[#73C5FF] to-[#AB9DFF] p-2">
                   <div className="flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-gray-100">
                     <LottieReact animationData={currentEmoji} loop={true} autoplay={true} aria-hidden className="w-[80px] md:w-[124px]" />

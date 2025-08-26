@@ -26,15 +26,15 @@ export type MicroCmsBlogDetailDataType = Article & {
 };
 
 export type Article = {
-  id: string;
-  revisedAt: string;
-  publishedAt: string;
-  updatedAt: string;
-  createdAt: string;
-  title: string;
-  body: string;
-  excerpt: string;
-  category: {
+  id?: string;
+  revisedAt?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  createdAt?: string;
+  title?: string;
+  body?: string;
+  excerpt?: string;
+  category?: {
     id: string;
     name: string;
   };
