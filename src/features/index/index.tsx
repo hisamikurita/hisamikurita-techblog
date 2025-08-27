@@ -26,7 +26,7 @@ export const PageIndex = ({ data }: { data: Article[] }) => {
             <ul className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {data.map((article: Article, index) => (
                 <Fragment key={article.id}>
-                  {index === 2 && (
+                  {index === 6 && (
                     <li className="overflow-hidden rounded-lg border-4 border-gray-300">
                       <CardAdSense className="block h-full w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot[0]} />
                     </li>

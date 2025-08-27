@@ -77,7 +77,7 @@ export const RSS = {
   size: "h-[14px] w-[14px]",
 };
 
-export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com", "developer.mozilla.org"];
+export const presetURLs = ["github.com", "hsmkrt1996.com", "awwwards.com", "developer.mozilla.org", "gsap.com"];
 
 export const ADSENSE = {
   googleAdsensePublisherId: process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_PUBLISHER_ID || "",
