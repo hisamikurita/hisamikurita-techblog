@@ -26,7 +26,7 @@ export const CardProfile = ({ className }: Props) => {
         </div>
         <div className="flex items-center gap-3">
           {Object.entries(SNS).map(([key, sns]) => (
-            <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label} className="rounded-md bg-[#E68282] p-2">
+            <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label} className="rounded-md bg-[#E68282] p-2 transition-transform duration-300 ease-transform hover:scale-[1.06]">
               <ReactSVG src={`/icons/${key}.svg`} className={cn(sns.size.base, "text-white")} />
             </a>
           ))}

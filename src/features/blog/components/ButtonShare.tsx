@@ -36,7 +36,7 @@ export const ButtonShare = ({ variant, url, title = "" }: Props) => {
       target="_blank"
       rel="noopener noreferrer"
       className={`
-        inline-flex items-center justify-center gap-2 rounded-lg p-2 font-semibold md:gap-1 lg:gap-2
+        transition-[transform, shadow] inline-flex items-center justify-center gap-2  rounded-lg p-2 font-semibold duration-300 ease-transform hover:-translate-y-[2px] hover:shadow-xl md:gap-1 lg:gap-2
         ${config.style}
       `}
     >

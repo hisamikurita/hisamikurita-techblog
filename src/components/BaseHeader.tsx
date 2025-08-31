@@ -33,20 +33,26 @@ export const BaseHeader = () => {
               <ul className="mt-[2px] flex items-center gap-6">
                 {MENUS.map((menu, index) => (
                   <li key={index} className="font-roboto font-semibold tracking-wide">
-                    <Link href={menu.url}>{menu.name}</Link>
+                    <Link href={menu.url} className="group relative transition-opacity duration-300 ease-material hover:text-primary">
+                      {menu.name}
+                      <span className="absolute bottom-0 left-0 h-[1px] w-full bg-primary opacity-0 transition-opacity duration-300 ease-material group-hover:opacity-100"></span>
+                    </Link>
                   </li>
                 ))}
                 <div className="flex items-center gap-3">
                   {Object.entries(SNS).map(([key, sns]) => (
-                    <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label}>
-                      <ReactSVG src={`/icons/${key}.svg`} className={cn(sns.size.base, "text-primary")} />
+                    <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label} className="group relative">
+                      <span className="absolute left-[50%] top-[50%] h-6 w-6 translate-x-[-50%] translate-y-[-50%] rounded-md bg-[#E68282] opacity-0 transition-opacity duration-300 ease-material group-hover:opacity-100"></span>
+                      <ReactSVG src={`/icons/${key}.svg`} className={cn(sns.size.base, "relative text-primary transition-opacity duration-300 ease-material group-hover:text-white")} />
                     </a>
                   ))}
-                  <a href={CONTACT.mail.url} aria-label={CONTACT.mail.label}>
-                    <ReactSVG src="/icons/mail.svg" className={cn(CONTACT.mail.size.base, "text-primary")} />
+                  <a href={CONTACT.mail.url} aria-label={CONTACT.mail.label} className="group relative">
+                    <span className="absolute left-[50%] top-[50%] h-6 w-6 translate-x-[-50%] translate-y-[-50%] rounded-md bg-[#E68282] opacity-0 transition-opacity duration-300 ease-material group-hover:opacity-100"></span>
+                    <ReactSVG src="/icons/mail.svg" className={cn(CONTACT.mail.size.base, "relative text-primary transition-opacity duration-300 ease-material group-hover:text-white")} />
                   </a>
-                  <a href={RSS.url} target={RSS.blank ? "_blank" : "_self"} {...(RSS.blank && { rel: "noopener noreferrer" })} aria-label={RSS.label}>
-                    <ReactSVG src="/icons/rss.svg" className={cn(RSS.size, "text-primary")} />
+                  <a href={RSS.url} target={RSS.blank ? "_blank" : "_self"} {...(RSS.blank && { rel: "noopener noreferrer" })} aria-label={RSS.label} className="group relative">
+                    <span className="absolute left-[50%] top-[50%] h-6 w-6 translate-x-[-50%] translate-y-[-50%] rounded-md bg-[#E68282] opacity-0 transition-opacity duration-300 ease-material group-hover:opacity-100"></span>
+                    <ReactSVG src="/icons/rss.svg" className={cn(RSS.size, "relative text-primary transition-opacity duration-300 ease-material group-hover:text-white")} />
                   </a>
                 </div>
               </ul>

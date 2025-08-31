@@ -32,13 +32,21 @@
     @apply text-[17px] leading-[1.9] tracking-[.08em];
 
     & .generate-card-preview {
-      @apply flex h-[72px] items-center overflow-hidden rounded-xl border border-gray-400 md:h-[120px];
+      @apply flex h-[72px] items-center overflow-hidden rounded-xl border border-gray-400 transition-[background-color] duration-300 ease-material hover:bg-gray-100 md:h-[120px];
 
-      & img {
-        @apply h-[72px] w-[138px] rounded-none border-none md:h-[120px] md:w-[230px];
+      & .generate-card-preview-thumbnail {
+        @apply h-[72px] w-[138px] shrink-0 overflow-hidden md:h-[120px] md:w-[230px];
       }
 
-      & span {
+      & img {
+        @apply h-full w-full rounded-none border-none object-cover transition-transform duration-300 ease-transform;
+      }
+
+      &:hover img {
+        @apply scale-[1.06];
+      }
+
+      & .generate-card-preview-href {
         @apply m-4 line-clamp-2 text-sm leading-[1.56] text-black md:m-6 md:text-base;
       }
     }
