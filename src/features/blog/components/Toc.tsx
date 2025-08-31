@@ -63,7 +63,7 @@ export const Toc = ({ toc }: { toc: Toc[] }) => {
             <li key={data.id} className="relative text-sm">
               {toc.length - 1 !== index && <span className="absolute left-[3px] top-5 h-[calc(100%_-_6px)] w-[1px] rounded-full bg-primary opacity-70"></span>}
               <a href={`#${data.id}`} className={`${activeId === data.id ? "md:opacity-100" : "md:opacity-70"} flex gap-3`}>
-                <span className={`${data.level === 3 ? "left-[1px] h-[5px] w-[5px]" : ""} relative top-[9px] block h-[7px] w-[7px] shrink-0 rounded-full bg-primary`}>{activeId === data.id && !isSp && <span className={`${data.level === 3 ? "left-[-2px] top-[-1px] h-[9px] w-[9px]" : ""} absolute left-[-2px] top-[-2px] h-[11px] w-[11px] rounded-full border border-primary`}></span>}</span>
+                <span className={`${data.level === 3 ? "left-[1px] top-[10px] h-[5px] w-[5px]" : "top-[9px] h-[7px] w-[7px]"} relative block  shrink-0 rounded-full bg-primary`}>{activeId === data.id && !isSp && <span className={`${data.level === 3 ? "left-[-2px] top-[-2px] h-[9px] w-[9px]" : "left-[-2px] top-[-2px] h-[11px] w-[11px] "} absolute rounded-full border border-primary`}></span>}</span>
                 <span className={data.level === 3 ? "relative top-[2px] text-xs" : ""}>{data.title}</span>
               </a>
             </li>
