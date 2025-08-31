@@ -14,6 +14,8 @@ import HeartFace from "../../../public/lottie/heart-face.json";
 import { CardAdSense } from "@/components/CardAdSense";
 import { CardArticle } from "@/components/CardArticle";
 import Smile from "../../../public/lottie/smile.json";
+import { ContentsRelatedArticles } from "./components/ContentsRelatedArticles";
+import { ContentsShare } from "./components/ContentsShare";
 
 export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
   const { isSp } = useDevice();
@@ -66,53 +68,28 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
                     <Toc toc={tocData} />
                   </div>
                 )}
-                <div className="mt-13">
-                  <RichEditor body={body} />
-                  <div className="mt-12 rounded-xl border-dashed  border-primary bg-gray-100 p-4">
-                    <div className="flex items-center justify-center gap-2">
-                      この記事をシェアする
-                      <LottieReact animationData={HeartFace} loop={true} autoplay={true} aria-hidden className="relative top-[0.8px] w-6" />
-                    </div>
-                    <div className="mt-4 grid grid-cols-3 gap-2">
-                      <ButtonShare variant="x" url={currentUrl} title={title} />
-                      <ButtonShare variant="fb" url={currentUrl} title={title} />
-                      <ButtonShare variant="hatena" url={currentUrl} title={title} />
-                    </div>
-                  </div>
-                  <CardAdSense className="mt-12 block w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adFormat="autorelaxed" adSlot={ADSENSE.adSlot[2]} />
-                  {relatedArticles && relatedArticles.length > 0 && (
-                    <div className="mt-12">
-                      <div className="flex items-center gap-2 border-b border-primary pb-2 text-lg font-bold text-primary">
-                        <div className="flex items-center justify-center rounded-full bg-primary p-2">
-                          <ReactSVG src="/icons/note.svg" aria-hidden className="relative top-[-0.1px] h-4 w-4 text-white" />
-                        </div>
-                        あわせて読みたい
-                      </div>
-                      <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-                        {relatedArticles?.map((article: Article) => (
-                          <li key={article.id}>
-                            <CardArticle {...article} />
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
               </div>
+              <RichEditor body={body} />
             </div>
             {/* 3 列目 */}
             <div className="flex flex-col gap-8">
+              {isSp && <ContentsShare currentUrl={currentUrl} title={title || ""} />}
               <CardProfile />
               <div>
                 <h2 className="border-b border-primary pb-1 text-lg">PR</h2>
                 <CardAdSense className="mt-4 block aspect-[16/9] w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adSlot={ADSENSE.adSlot[0]} />
               </div>
               {!isSp && (
-                <div className="sticky top-[84px] hidden md:block">
+                <div className="sticky top-[84px] mb-7 hidden md:block">
                   <Toc toc={tocData} />
                 </div>
               )}
             </div>
+          </div>
+          <div className="mt-13">
+            {!isSp && <ContentsShare currentUrl={currentUrl} title={title || ""} className="mt-12" />}
+            <CardAdSense className="mt-12 block w-full" googleAdsensePublisherId={ADSENSE.googleAdsensePublisherId} adFormat="autorelaxed" adSlot={ADSENSE.adSlot[2]} />
+            <ContentsRelatedArticles relatedArticles={relatedArticles} />
           </div>
         </div>
       </div>

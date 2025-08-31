@@ -48,7 +48,7 @@
     }
 
     & h3 {
-      @apply mb-[22px] mt-[44px] inline-flex table border-b border-primary pb-1 text-[20px] font-bold;
+      @apply mb-[22px] mt-[44px] table border-b border-primary pb-1 text-[20px] font-bold;
     }
 
     & ul {
@@ -80,7 +80,7 @@
       @apply my-6;
 
       & code {
-        @apply rounded-md;
+        @apply rounded-md text-base;
       }
     }
 
