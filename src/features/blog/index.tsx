@@ -52,7 +52,7 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 aspect-[1200/630] w-full overflow-hidden rounded-xl border border-gray-300">
+              <div className="mt-10 aspect-[1200/630] w-full overflow-hidden rounded-xl">
                 <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
               </div>
               <div className="custom-editor-container">
