@@ -10,7 +10,7 @@ export const CardArticle = (article: Article) => {
 
   const borderStyle = {
     works: "bg-gray-300",
-    tech: "bg-gradient-to-r from-[#73C5FF] to-[#AB9DFF]",
+    tech: "bg-gradient-to-r from-[#FF7F7F] to-[#FFC698]",
   };
 
   const borderClass = borderStyle[category?.id as keyof typeof borderStyle] || "";
@@ -20,7 +20,7 @@ export const CardArticle = (article: Article) => {
     <article>
       <Link href={`${URL_BLOG}${id}`} className={`${borderClass} transition-[transform, shadow] block h-full w-full rounded-xl p-1 shadow-md duration-300 ease-transform hover:-translate-y-1 hover:shadow-2xl`}>
         <div className="relative block overflow-hidden rounded-lg">
-          <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-gray-100">
+          <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-red-50">
             {category?.id === CATEGORY.TECH && <LottieReact animationData={currentEmoji} loop={true} autoplay={true} aria-hidden className="w-20" />}
             {category?.id === CATEGORY.WORKS && <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />}
           </div>

@@ -23,7 +23,7 @@ export const PageAbout = (data: MicroCmsAboutDataType) => {
       <BaseHead {...metaData} />
       <div className="pb-10 pt-[60px]">
         <div className="c-main-container">
-          <div className="mt-8 rounded-xl bg-gray-100 px-5 py-4">{intro}</div>
+          <div className="mt-12 rounded-xl bg-gray-100 px-5 py-4">{intro}</div>
           <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
             <div className="c-sub-container md:col-span-2">
               <Image src="/ogp.jpg" alt="" width={1280} height={630} aria-hidden className="rounded-xl" />

@@ -16,7 +16,7 @@ export const BaseHeader = () => {
   const router = useRouter();
 
   return (
-    <header className={`fixed z-10 flex h-[60px] w-full items-center bg-white ${isMenuOpen ? "border-b-[1px]" : ""}`}>
+    <header className="fixed z-10 flex h-[60px] w-full items-center border-b-[1px] bg-white">
       <div className="c-main-container">
         <div className="flex items-center justify-between">
           <p {...(isMenuOpen ? { inert: "" } : "")}>
