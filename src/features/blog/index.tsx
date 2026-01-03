@@ -1,21 +1,17 @@
 import { BaseHead } from "@/components/BaseHead";
-import { Article, MicroCmsBlogDetailDataType } from "@/types";
+import { MicroCmsBlogDetailDataType } from "@/types";
 import { DateFormatter } from "@/components/DateFormatter";
 import { ADSENSE, ANIMATED_EMOJI, CATEGORY, META_DESCRIPTION, SITE_NAME } from "@/constants";
-import { RichEditor } from "@/features/blog/components/RichEditor";
 import { parseToc } from "@/utils/parseToc";
 import { ReactSVG } from "react-svg";
 import { Toc } from "@/features/blog/components/Toc";
 import { CardProfile } from "@/components/CardProfile";
 import { useDevice } from "@/hooks/useDevice";
-import { ButtonShare } from "@/features/blog/components/ButtonShare";
-import LottieReact from "lottie-react";
-import HeartFace from "../../../public/lottie/heart-face.json";
 import { CardAdSense } from "@/components/CardAdSense";
-import { CardArticle } from "@/components/CardArticle";
 import Smile from "../../../public/lottie/smile.json";
 import { ContentsRelatedArticles } from "./components/ContentsRelatedArticles";
 import { ContentsShare } from "./components/ContentsShare";
+import { RichEditor } from "./components/RichEditor";
 
 export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
   const { isSp } = useDevice();
@@ -28,7 +24,6 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
   };
 
   const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${data.id}`;
-  const currentEmoji = ANIMATED_EMOJI[thumbnailEmoji as keyof typeof ANIMATED_EMOJI] || Smile;
   const tocData = parseToc({ body });
 
   return (

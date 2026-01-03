@@ -1,8 +1,7 @@
 import { presetURLs } from "@/constants";
 import { load } from "cheerio";
 import { generateCardPreview } from "@/utils/generateCardPreview";
-import hljs from "highlight.js";
-import "highlight.js/styles/tokyo-night-dark.min.css";
+import { codeToHtml } from "shiki";
 
 const addExternalLinkIcon = ($: ReturnType<typeof load>) => {
   $('a[target="_blank"]').append('<svg aria-label="新規タブで開きます" width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>');
@@ -21,7 +20,6 @@ const replaceLinksWithCardPreview = ($: ReturnType<typeof load>) => {
 
         if (presetURLs.includes(domain)) {
           processedUrls.add(href);
-
           const cardPreview = generateCardPreview(href);
           $(element).replaceWith(cardPreview);
         }
@@ -32,39 +30,65 @@ const replaceLinksWithCardPreview = ($: ReturnType<typeof load>) => {
   });
 };
 
-const addCodeHightLight = ($: ReturnType<typeof load>) => {
-  $("pre code").each((_, elem) => {
-    const className = $(elem).attr("class");
-    const language = className?.replace("language-", "");
+const addCodeHighlight = async ($: ReturnType<typeof load>) => {
+  const codeBlocks: Promise<void>[] = [];
 
-    let result;
-    if (language) {
+  $("pre code").each((_, elem) => {
+    const $code = $(elem);
+    const className = $code.attr("class");
+    const language = className?.replace("language-", "") || "javascript";
+    const code = $code.text();
+
+    const promise = (async () => {
       try {
-        result = hljs.highlight($(elem).text(), { language });
+        const html = await codeToHtml(code, {
+          lang: language,
+          theme: "dark-plus",
+          transformers: [
+            {
+              line(node, line) {
+                node.properties["data-line"] = line;
+                this.addClassToHast(node, "line");
+              },
+              pre(node) {
+                this.addClassToHast(node, "shiki-with-line-numbers");
+              },
+            },
+          ],
+        });
+
+        const htmlWithCopyButton = `
+          <div class="code-block-wrapper">
+            <button class="copy-code-button" aria-label="コードをコピー" data-code="${code.replace(/"/g, "&quot;").replace(/\n/g, "&#10;")}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+            ${html}
+          </div>
+        `;
+
+        $code.parent().replaceWith(htmlWithCopyButton);
       } catch (error) {
-        result = hljs.highlightAuto($(elem).text());
+        $code.addClass(`language-${language}`);
       }
-    } else {
-      result = hljs.highlightAuto($(elem).text());
-    }
-    $(elem).html(result.value);
-    $(elem).addClass("hljs");
+    })();
+
+    codeBlocks.push(promise);
   });
+
+  await Promise.all(codeBlocks);
 };
 
-export const parseRichEditor = ({ body }: { body?: string }) => {
+export const parseRichEditor = async ({ body }: { body?: string }) => {
   if (!body) return body;
 
   const $ = load(body);
 
-  // 外部リンクにアイコンを追加
   addExternalLinkIcon($);
-
-  // 特定のURLをカードプレビューに置き換え
   replaceLinksWithCardPreview($);
-
-  // コードハイライト
-  addCodeHightLight($);
+  await addCodeHighlight($);
 
   return $.html();
 };

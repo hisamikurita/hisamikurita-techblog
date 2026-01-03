@@ -1,11 +1,13 @@
-import { parseRichEditor } from "@/utils/parseRichEditor";
+"use client";
+
+import { useCodeCopy } from "../hooks/useCodeCopy";
 
 type Props = {
   body?: string;
 };
 
 export const RichEditor = ({ body }: Props) => {
-  const parsedHtml = parseRichEditor({ body });
+  useCodeCopy(body);
 
-  return <div className="editor" dangerouslySetInnerHTML={{ __html: parsedHtml || "" }}></div>;
+  return <div className="editor" dangerouslySetInnerHTML={{ __html: body || "" }}></div>;
 };

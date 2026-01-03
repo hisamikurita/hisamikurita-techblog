@@ -85,11 +85,8 @@
     }
 
     & pre {
-      @apply my-6;
-
-      & code {
-        @apply rounded-md text-base;
-      }
+      @apply my-6 rounded-md p-6 text-[15px] leading-[1.7];
+      overflow: overlay;
     }
 
     & a[target="_blank"] {
@@ -100,4 +97,49 @@
       }
     }
   }
+}
+
+/* コピーボタンのスタイル */
+.code-block-wrapper {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+  padding: 0.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.375rem;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.code-block-wrapper:hover .copy-code-button {
+  opacity: 1;
+}
+
+.copy-code-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.copy-code-button:active {
+  transform: scale(0.95);
+}
+
+.copy-code-button.copied {
+  background: rgba(#d46666, 0.2);
+  border-color: rgba(#d46666, 0.4);
+}
+
+.copy-code-button svg {
+  display: block;
+  width: 16px;
+  height: 16px;
 }
