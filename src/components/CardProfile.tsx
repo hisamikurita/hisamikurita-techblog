@@ -14,7 +14,7 @@ export const CardProfile = ({ className }: Props) => {
         <Image src="/images/me.png" alt="" width={240} height={240} className="mx-auto h-20 w-20 rounded-full border border-gray-400 object-cover" />
         <h2 className="mt-2 text-center text-sm font-semibold">くりちゃん</h2>
         <p className="mt-4 text-[13px] text-gray-700">
-          東京で働くUIデザイナー + クリエイティブ・フロンエンドエンジニア。
+          東京で働くクリエイティブ・フロントエンドデベロッパー。
           <br />
           プログラミングが好きで休みの日もコードを書いて、モノづくりを楽しんでいる。文章を書くのは苦手。
         </p>

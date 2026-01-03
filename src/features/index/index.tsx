@@ -19,7 +19,7 @@ export const PageIndex = ({ data }: { data: Article[] }) => {
       <div className="pb-10 pt-[60px]">
         <div className="c-main-container">
           <div className="mt-12 rounded-xl bg-gray-100 px-5 py-4">
-            ようこそ。UIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートなブログです。
+            ようこそ。クリエイティブ・フロンエンドデベロッパーのプライベートなブログです。
             <LottieReact animationData={Wave} loop={true} autoplay={true} aria-hidden className="relative top-1 inline-block w-[22px]" />
           </div>
           {data.length > 0 && (

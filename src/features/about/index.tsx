@@ -27,7 +27,7 @@ export const PageAbout = (data: MicroCmsAboutDataType) => {
           <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
             <div className="c-sub-container md:col-span-2">
               <Image src="/ogp.jpg" alt="" width={1280} height={630} aria-hidden className="rounded-xl" />
-              <p className="mt-10">このブログは東京で働くUIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートな情報発信ブログです。</p>
+              <p className="mt-10">このブログは東京で働くクリエイティブ・フロンエンドデベロッパーのプライベートな情報発信ブログです。</p>
               <div className="mt-8">
                 副業でWEBサイト等の制作も行なっているので、ご相談をご希望の方は、kuritahisami@gmail.com
                 <a href={CONTACT.mail.url} className="relative top-[1px] mx-1 inline-flex border-b border-primary pb-[1px] text-primary">
