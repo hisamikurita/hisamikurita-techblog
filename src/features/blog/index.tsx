@@ -8,14 +8,13 @@ import { Toc } from "@/features/blog/components/Toc";
 import { CardProfile } from "@/components/CardProfile";
 import { useDevice } from "@/hooks/useDevice";
 import { CardAdSense } from "@/components/CardAdSense";
-import Smile from "../../../public/lottie/smile.json";
 import { ContentsRelatedArticles } from "./components/ContentsRelatedArticles";
 import { ContentsShare } from "./components/ContentsShare";
 import { RichEditor } from "./components/RichEditor";
 
 export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
   const { isSp } = useDevice();
-  const { title, thumbnail, body, excerpt, publishedAt, updatedAt, relatedArticles, category, thumbnailEmoji } = data;
+  const { title, thumbnail, body, excerpt, publishedAt, updatedAt, relatedArticles } = data;
 
   const metaData = {
     title: `${title} | ${SITE_NAME}`,
@@ -23,7 +22,7 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
 
-  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${data.id}`;
+  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}blog/${data.id}`;
   const tocData = parseToc({ body });
 
   return (

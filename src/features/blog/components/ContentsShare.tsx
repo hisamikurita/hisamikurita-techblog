@@ -2,6 +2,7 @@ import LottieReact from "lottie-react";
 import { ButtonShare } from "@/features/blog/components/ButtonShare";
 import HeartFace from "../../../../public/lottie/heart-face.json";
 import { cn } from "@/libs/tailwindMerge";
+import { ButtonUrlCopy } from "./ButtonUrlCopy";
 
 export const ContentsShare = ({ currentUrl, title, className }: { currentUrl: string; title: string; className?: string }) => {
   return (
@@ -14,6 +15,7 @@ export const ContentsShare = ({ currentUrl, title, className }: { currentUrl: st
         <ButtonShare variant="x" url={currentUrl} title={title} />
         <ButtonShare variant="fb" url={currentUrl} title={title} />
         <ButtonShare variant="hatena" url={currentUrl} title={title} />
+        <ButtonUrlCopy url={currentUrl} />
       </div>
     </div>
   );
