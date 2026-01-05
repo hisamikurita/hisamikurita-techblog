@@ -22,7 +22,7 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
     thumbnail: `${thumbnail?.url}?fm=webp&q=80`,
   };
 
-  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}blog/${data.id}`;
+  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${data.id}`;
   const tocData = parseToc({ body });
 
   return (
