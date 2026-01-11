@@ -7,10 +7,8 @@ type Props = {
 };
 
 export const DateFormatter = ({ date, className }: Props) => {
-  if (!date) return "日付がありません";
-
-  const formattedDate = formatDate(date);
-  const ymdDate = formatYmd(date);
+  const formattedDate = date ? formatDate(date) : "日付がありません";
+  const ymdDate = date ? formatYmd(date) : "";
 
   return (
     <time dateTime={ymdDate} className={cn("text-xs text-gray-400", className)}>

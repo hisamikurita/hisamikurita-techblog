@@ -63,6 +63,10 @@
       @apply my-6 grid list-inside list-disc gap-[4px];
     }
 
+    & ol {
+      @apply my-6 grid list-inside list-decimal gap-[4px];
+    }
+
     & p {
       @apply my-7;
     }
