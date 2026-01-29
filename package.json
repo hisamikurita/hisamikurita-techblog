@@ -3,7 +3,7 @@
   "version": "1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run rss && next build && next-export-optimize-images",
+    "build": "npm run rss && npm run llms && next build && next-export-optimize-images",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint:html": "markuplint 'src/**/*.{html,jsx,tsx}'",
@@ -12,6 +12,7 @@
     "lint:check": "npm run lint:html && npm run lint:style && npm run lint:es",
     "format": "prettier --write .",
     "prepare": "husky install",
+    "llms" : "tsx llms.ts",
     "rss": "tsx rss.ts"
   },
   "dependencies": {

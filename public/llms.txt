@@ -1,0 +1,120 @@
+# MARON DEV | クリエイティブ・フロントエンドデベロッパーのプライベートなブログ
+
+> 東京で働くクリエイティブ・フロントエンドデベロッパーのプライベートな情報発信ブログ
+> https://hsmkrt-tech.com/
+
+## About
+
+栗田久海 (Kurita Hisami) のプライベートな技術ブログです。
+1996年生まれのフロントエンドエンジニアとして、アニメーションやインタラクション表現を得意としています。
+
+### 実績
+- Awwwards SOTD 受賞
+- Nominated for DEVELOPER OF THE YEAR 2022
+- 国内外で多数のWEBアワード受賞
+
+### 専門領域
+- フロントエンド開発 (JavaScript/TypeScript)
+- アニメーション実装 (GSAP, Three.js)
+- インタラクティブ表現
+- パフォーマンス最適化
+- microCMS を使用したサイト制作
+
+## Main Content
+
+このブログでは、実務で培った技術知識やベストプラクティスを共有しています。
+
+### 主なトピック
+
+- アニメーション・パフォーマンス最適化
+- GSAP を使用したアニメーション実装
+- JavaScript/TypeScriptのベストプラクティス
+- Three.js による3D表現
+- microCMS を使用したサイト制作
+- 個人開発プロジェクト
+
+## Blog Articles
+
+全8記事を公開中
+
+### 1. 【繰り返し処理の最適化】JavaScriptの setInterval を使わずに GSAP の onRepeat で実装する。
+
+- URL: https://hsmkrt-tech.com/blog/5c_qbo90-d5
+- 公開日: 2025年8月28日
+- 概要: 安定した繰り返し処理を実装したいけど、setIntervalだと別タブで動かなくなる…そんな悩みをGSAPが解決します。gsap.to()とonRepeatを組み合わせることで、自動停止や簡単な再開・停止制御を可能にするテクニックを解説。
+
+### 2. GSAPでスムーススクロールに独自のイージングを適用させるシンプルな実装例
+
+- URL: https://hsmkrt-tech.com/blog/yi-yg1c1jt
+- 公開日: 2025年8月28日
+- 概要: デフォルトのスムーススクロールでは表現できない、独自のアニメーションを加えてみませんか？ GSAPのscrollToメソッドを活用して、ブランドイメージに合った滑らかなスクロールを簡単に実装するテクニックを解説します。
+
+### 3. JavaScriptのnormalizeで文字列の「正規化」をして、検索機能の半角・全角の差をシンプルに吸収する
+
+- URL: https://hsmkrt-tech.com/blog/m-d3of3wr6n
+- 公開日: 2025年8月28日
+- 概要: ユーザーの入力する全角・半角の表記揺れを吸収し、検索精度を向上させる方法を探っていませんか？ JavaScriptのnormalize()メソッドを使って、検索機能をシンプルかつ堅牢に実装するテクニックを紹介します。
+
+### 4. 【120FPS問題の解決策】 gsap.ticker を使用してアニメーションを60FPSで制御する
+
+- URL: https://hsmkrt-tech.com/blog/jnu81wlo5
+- 公開日: 2025年8月28日
+- 概要: ディスプレイのリフレッシュレートに依存しないJavaScriptアニメーションの実装方法とは？ requestAnimationFrameの「120FPS問題」を解決し、常に滑らかなアニメーションを実現するGSAPのgsap.tickerの使い方を解説します。
+
+### 5. Intersection Observer で画面外のCSSアニメーションを停止してパフォーマンスを改善する
+
+- URL: https://hsmkrt-tech.com/blog/723tpoacj
+- 公開日: 2025年8月26日
+- 概要: 画面外のCSSアニメーションは、実はパフォーマンス低下の原因かもしれません。この記事では、「Intersection Observer」を使って、見えないアニメーションを効率的に停止させる方法を解説します。ウェブサイトの速度改善に役立つ具体的な実装テクニックを学び、ユーザー体験を向上させましょう。
+
+### 6. 【個人開発】LGTMジェネレーター(画像作成WEBサービス)を作成してみました
+
+- URL: https://hsmkrt-tech.com/blog/1al-gyfdqzly
+- 公開日: 2025年7月31日
+- 概要: LGTM画像を簡単に作れる「LGTM GENERATOR WITH EMOJI」を個人開発。技術スタックや画像生成フロー、AWS運用コストから学んだことを紹介します。
+
+### 7. 【WEBデザインアワード受賞】フロントエンドエンジニアがポートフォリオを公開しました
+
+- URL: https://hsmkrt-tech.com/blog/s9hkb47d7x
+- 公開日: 2022年11月14日
+- 概要: microCMSを活用して制作したポートフォリオの制作過程を紹介。Awwwards SOTD・Developer Awardを受賞したフロントエンド実装の裏側をまとめました。
+
+### 8. 【個人ブログ開設】microCMSを使用してSSGなWEBサイトを制作する
+
+- URL: https://hsmkrt-tech.com/blog/3e8yuok9663
+- 公開日: 2022年11月8日
+- 概要: microCMSを使用して個人ブログを開設しました。技術選定やシステム構成図、機能実装の工夫、今後の方針をまとめています。
+
+## Technical Stack
+
+このサイトで扱う主な技術:
+- JavaScript / TypeScript
+- GSAP (GreenSock Animation Platform)
+- Three.js
+- React / Next.js
+- microCMS (ヘッドレスCMS)
+- Intersection Observer API
+- requestAnimationFrame
+- パフォーマンス最適化手法
+
+## Contact & Links
+
+- Email: kuritahisami@gmail.com
+- X/Twitter: https://x.com/kurichans_1996
+- Portfolio: https://hsmkrt1996.com/
+- GitHub: https://github.com/hisamikurita
+- GitHub Repository (Portfolio): https://github.com/hisamikurita/hisamikurita-portfoliosite-v2022
+
+## Site Navigation
+
+- Home: https://hsmkrt-tech.com/
+- Blog Posts: https://hsmkrt-tech.com/blog/
+- About: https://hsmkrt-tech.com/about/
+
+---
+
+Last Updated: 2026年1月29日
+Site Type: Personal Technical Blog
+Primary Language: Japanese
+Focus: Frontend Development, Animation, Performance Optimization
+Total Articles: 8

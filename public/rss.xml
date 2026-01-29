@@ -1,15 +1,55 @@
 <rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
-    <title>MARON DEV | UIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートなブログ</title>
-    <description>東京で働くUIデザイナー + クリエイティブ・フロンエンドエンジニアのプライベートな情報発信ブログ</description>
+    <title>MARON DEV | クリエイティブ・フロントエンドデベロッパーのプライベートなブログ</title>
+    <description>東京で働くクリエイティブ・フロントエンドデベロッパーのプライベートな情報発信ブログ</description>
     <link>https://hsmkrt-tech.com/</link>
+    <item>
+      <title>【繰り返し処理の最適化】JavaScriptの setInterval を使わずに GSAP の onRepeat で実装する。</title>
+      <description>安定した繰り返し処理を実装したいけど、setIntervalだと別タブで動かなくなる…そんな悩みをGSAPが解決します。gsap.to()とonRepeatを組み合わせることで、自動停止や簡単な再開・停止制御を可能にするテクニックを解説。</description>
+      <link>https://hsmkrt-tech.com/blog/5c_qbo90-d5</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/5c_qbo90-d5</guid>
+      <pubDate>Wed, 27 Aug 2025 17:00:59 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/891a2063b56943f3a1fc0e2479b4275d/ghost.jpg?fm=jpeg&amp;q=80"/>
+    </item>
+    <item>
+      <title>GSAPでスムーススクロールに独自のイージングを適用させるシンプルな実装例</title>
+      <description>デフォルトのスムーススクロールでは表現できない、独自のアニメーションを加えてみませんか？ GSAPのscrollToメソッドを活用して、ブランドイメージに合った滑らかなスクロールを簡単に実装するテクニックを解説します。</description>
+      <link>https://hsmkrt-tech.com/blog/yi-yg1c1jt</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/yi-yg1c1jt</guid>
+      <pubDate>Wed, 27 Aug 2025 16:55:28 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/6476cc8c7bf9431dbc6cd8db802ad796/smile.jpg?fm=jpeg&amp;q=80"/>
+    </item>
+    <item>
+      <title>JavaScriptのnormalizeで文字列の「正規化」をして、検索機能の半角・全角の差をシンプルに吸収する</title>
+      <description>ユーザーの入力する全角・半角の表記揺れを吸収し、検索精度を向上させる方法を探っていませんか？ JavaScriptのnormalize()メソッドを使って、検索機能をシンプルかつ堅牢に実装するテクニックを紹介します。</description>
+      <link>https://hsmkrt-tech.com/blog/m-d3of3wr6n</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/m-d3of3wr6n</guid>
+      <pubDate>Wed, 27 Aug 2025 16:44:45 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/1cd96b137e864e09a7b675d8859db03e/write-hand.jpg?fm=jpeg&amp;q=80"/>
+    </item>
+    <item>
+      <title>【120FPS問題の解決策】 gsap.ticker を使用してアニメーションを60FPSで制御する</title>
+      <description>ディスプレイのリフレッシュレートに依存しないJavaScriptアニメーションの実装方法とは？ requestAnimationFrameの「120FPS問題」を解決し、常に滑らかなアニメーションを実現するGSAPのgsap.tickerの使い方を解説します。</description>
+      <link>https://hsmkrt-tech.com/blog/jnu81wlo5</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/jnu81wlo5</guid>
+      <pubDate>Wed, 27 Aug 2025 16:31:12 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/f8091029e0df49c1a14bbb70f9f15d6e/roket.jpg?fm=jpeg&amp;q=80"/>
+    </item>
     <item>
       <title>Intersection Observer で画面外のCSSアニメーションを停止してパフォーマンスを改善する</title>
       <description>画面外のCSSアニメーションは、実はパフォーマンス低下の原因かもしれません。この記事では、「Intersection Observer」を使って、見えないアニメーションを効率的に停止させる方法を解説します。ウェブサイトの速度改善に役立つ具体的な実装テクニックを学び、ユーザー体験を向上させましょう。</description>
       <link>https://hsmkrt-tech.com/blog/723tpoacj</link>
       <guid isPermaLink="true">https://hsmkrt-tech.com/blog/723tpoacj</guid>
       <pubDate>Tue, 26 Aug 2025 14:41:30 GMT</pubDate>
-      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/bbcd4ca8bd2e4c48b0ac83657dd331e8/seal.jpg?fm=jpeg&amp;q=80"/>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/c0d7882cbdc34861993d7afc1b76c924/seal.jpg?fm=jpeg&amp;q=80"/>
+    </item>
+    <item>
+      <title>【個人開発】LGTMジェネレーター(画像作成WEBサービス)を作成してみました</title>
+      <description>LGTM画像を簡単に作れる「LGTM GENERATOR WITH EMOJI」を個人開発。技術スタックや画像生成フロー、AWS運用コストから学んだことを紹介します。</description>
+      <link>https://hsmkrt-tech.com/blog/1al-gyfdqzly</link>
+      <guid isPermaLink="true">https://hsmkrt-tech.com/blog/1al-gyfdqzly</guid>
+      <pubDate>Thu, 31 Jul 2025 13:27:00 GMT</pubDate>
+      <media:content type="image/jpeg" width="1200" height="630" medium="image" url="https://images.microcms-assets.io/assets/6f002fc31ce344fb8317072804ccb410/c74324e93fee41688a16db451d8ddfc5/337923157-07ee4efe-946c-446d-b5b0-119da91a364c.jpg?fm=jpeg&amp;q=80"/>
     </item>
     <item>
       <title>【WEBデザインアワード受賞】フロントエンドエンジニアがポートフォリオを公開しました</title>
