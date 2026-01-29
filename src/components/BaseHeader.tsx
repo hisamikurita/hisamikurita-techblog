@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { ReactSVG } from "react-svg";
 import { cn } from "@/libs/tailwindMerge";
+import { HeaderSearch } from "./HeaderSearch";
 
 export const BaseHeader = () => {
   const { isSp } = useDevice();
@@ -31,6 +32,9 @@ export const BaseHeader = () => {
           {!isSp && (
             <nav className="hidden md:block">
               <ul className="mt-[2px] flex items-center gap-6">
+                <li className="w-[200px]">
+                  <HeaderSearch />
+                </li>
                 {MENUS.map((menu, index) => (
                   <li key={index} className="font-roboto font-semibold tracking-wide">
                     <Link href={menu.url} className="group relative transition-opacity duration-300 ease-material hover:text-primary">
@@ -78,6 +82,9 @@ export const BaseHeader = () => {
                       ))}
                     </ul>
                   </nav>
+                  <div className="px-[30px] pb-8">
+                    <HeaderSearch />
+                  </div>
                   <div className="flex items-center justify-center gap-5 bg-primary py-4">
                     {Object.entries(SNS).map(([key, sns]) => (
                       <a key={key} href={sns.url} target={sns.blank ? "_blank" : "_self"} {...(sns.blank && { rel: "noopener noreferrer" })} aria-label={sns.label} className="rounded-md bg-[#E68282] p-2">

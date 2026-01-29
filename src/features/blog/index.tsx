@@ -14,7 +14,7 @@ import { RichEditor } from "./components/RichEditor";
 
 export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
   const { isSp } = useDevice();
-  const { title, thumbnail, body, excerpt, publishedAt, updatedAt, relatedArticles } = data;
+  const { title, thumbnail, body, excerpt, publishedAt, updatedAt, relatedArticles, category, thumbnailEmoji } = data;
 
   const metaData = {
     title: `${title} | ${SITE_NAME}`,
@@ -32,7 +32,20 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
         <div className="c-main-container">
           <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-6 lg:gap-10">
             {/* 1 ~ 2 列目 */}
-            <div className="c-sub-container md:col-span-2">
+            <div className="c-sub-container md:col-span-2" data-pagefind-body>
+              {/* Pagefind Meta Data */}
+              <span data-pagefind-meta="category" hidden>
+                {category?.id}
+              </span>
+              <span data-pagefind-meta="thumbnailEmoji" hidden>
+                {thumbnailEmoji}
+              </span>
+              <span data-pagefind-meta="publishedAt" hidden>
+                {publishedAt}
+              </span>
+              <span data-pagefind-meta="updatedAt" hidden>
+                {updatedAt}
+              </span>
               <div>
                 <h1 className="text-[24px]">{title}</h1>
                 <div className="mt-4 flex flex-wrap gap-2 md:gap-3">
@@ -47,7 +60,7 @@ export const PageBlogDetail = (data: MicroCmsBlogDetailDataType) => {
                 </div>
               </div>
               <div className="mt-10 aspect-[1200/630] w-full overflow-hidden rounded-xl">
-                <img src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
+                <img data-pagefind-meta="image" src={`${thumbnail?.url}?fm=webp&q=80`} alt="" width={thumbnail?.width} height={thumbnail?.height} decoding="async" className="h-full w-full object-cover" />
               </div>
               <div className="custom-editor-container">
                 {isSp && (
