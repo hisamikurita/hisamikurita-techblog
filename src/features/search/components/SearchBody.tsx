@@ -11,8 +11,13 @@ export const SearchBody = () => {
     <>
       <div className="rounded-xl bg-gray-100 px-5 py-4">
         検索ページです。キーワードを入力して記事を検索してください。
-        <LottieReact animationData={Eyes} loop={true} autoplay={true} aria-hidden className="relative top-[5px] mr-2 inline-block w-[22px]" />
-        {isLoading && <span>検索中...</span>}
+        <LottieReact animationData={Eyes} loop={true} autoplay={true} aria-hidden className="relative top-[5px] mr-3 inline-block w-[22px]" />
+        {isLoading && (
+          <span className="inline-flex gap-2">
+            検索中...
+            <ReactSVG src="/icons/loading.svg" className="h-6 w-6 animate-spin duration-[400]" />
+          </span>
+        )}
         {!isLoading && query && results.length === 0 && <span>「検索結果が見つかりませんでした。」</span>}
         {!isLoading && results.length > 0 && (
           <>

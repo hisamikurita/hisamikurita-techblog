@@ -113,7 +113,7 @@
 
 ---
 
-Last Updated: 2026年1月29日
+Last Updated: 2026年1月30日
 Site Type: Personal Technical Blog
 Primary Language: Japanese
 Focus: Frontend Development, Animation, Performance Optimization
